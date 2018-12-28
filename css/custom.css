@@ -50,6 +50,8 @@ nav.group, body footer {
     padding-top: 2rem;
 }
 
+
+
 /* reset tufte-css link settings */
 nav.group a:link {
     text-decoration: initial;
@@ -93,6 +95,11 @@ nav.group a {
     z-index: 10;        /* ^^ */
 }
 
+title {
+  color: black;
+}
+
+
 hr {
     border: 0;
     height: 1px;
@@ -101,3 +108,5 @@ hr {
     margin-right: auto;
     border-style: inset;
 }
+
+
