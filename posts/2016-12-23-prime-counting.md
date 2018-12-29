@@ -52,7 +52,7 @@ The simplest way to go about computing $\pi(x)$ is to just generate the primes a
 
 Here is a basic implementation in Python:
 
-{% highlight python %}
+```python
 def sieve(n):
     """
     Generate the primes less than or equal to n using the sieve of
@@ -70,7 +70,7 @@ def sieve(n):
 def pi(x):
     """Calculates the number of primes less than or equal to x."""
     return len(sieve(x))
-{% endhighlight %}
+```
 
 The [primesieve](https://github.com/kimwalisch/primesieve) software package provides an optimized C++ implementation of the Eratosthenes sieve.
 
@@ -165,7 +165,7 @@ which follows from the definition of $\phi$: the integers not divisible by any o
 In the implementation below, $\phi$ is computed using a memoized recursive procedure.  It turns out that one can make this computation more efficient by applying a truncation rule during the recursive chain.  The details of how to do this are somewhat involved, but the interested reader can refer to [^2] and [^3].
 
 
-{% highlight python %}
+```python
 from bisect import bisect
 
 def prime_sieve(n):
@@ -247,7 +247,7 @@ def pi(x):
 # Example
 # result = pi(10**8)
 #print result
-{% endhighlight %}
+```
 
 ## Further Reading
 
