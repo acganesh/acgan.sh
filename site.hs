@@ -20,7 +20,7 @@ main = hakyllWith config $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.md", "projects.md", "blog.md"]) $ do
+    match (fromList ["about.md", "projects.md", "maxent.md"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
@@ -61,7 +61,7 @@ main = hakyllWith config $ do
     --             >>= loadAndApplyTemplate "templates/default.html" archiveCtx
     --             >>= relativizeUrls
 
-    match "index.md" $ do
+    match "index.html" $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"

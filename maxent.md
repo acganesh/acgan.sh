@@ -6,7 +6,7 @@ Welcome to my blog, which is an informal platform for ideas I'm thinking about. 
 
 My posts are below.  When available, I have linked to published posts.  The unlinked articles are placeholders for drafts in progress.
 
-The blog title, "Maximum Entropy," is a nod to the [principle of maximum entropy](https://en.wikipedia.org/wiki/Principle_of_maximum_entropy).
+The blog title is a nod to the [principle of maximum entropy](https://en.wikipedia.org/wiki/Principle_of_maximum_entropy).
 
 ## Mathematics and statistics
 
