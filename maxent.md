@@ -2,6 +2,8 @@
 title: Blog - Maximum Entropy
 ---
 
+# Blog - Maximum Entropy
+
 Welcome to my blog, which is an informal platform for ideas I'm thinking about.  My goal is to document my "back of the napkin" thoughts in mathematics, computer science, policy, and other curiosities.
 
 My posts are below.  When available, I have linked to published posts.  The unlinked articles are placeholders for drafts in progress.

@@ -2,6 +2,8 @@
 title: Projects
 ---
 
+# Projects
+
 ## Teaching
 
 [Stanford CS43](https://stanford-lambda.gitlab.io/): Functional Programming Abstractions.  A class I teach at Stanford with Isaac Scheinfeld and previously Allan Jiang.  Winter 2017, Winter 2018, Winter 2019.
