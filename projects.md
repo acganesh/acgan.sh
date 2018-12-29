@@ -8,7 +8,7 @@ title: Projects
 
 ## Writing
 
-Editor, [The Gradient](https://thegradient.pub/).  Co-founded and grew publication to 5,000 subscribers and 200,000 page reads.
+Editor, [The Gradient](https://thegradient.pub/).  A digital publication focused on reporting on the state-of-the-art in machine learning.
 
 ## Patents
 
@@ -17,23 +17,26 @@ Editor, [The Gradient](https://thegradient.pub/).  Co-founded and grew publicati
 
 ## Publications
 
-"Deep recurrent neural networks for accurate variant calling in 21-hydroxylase-deficient congenital adrenal hyperplasia" (poster, 2018).   ASHG 2018.
+"Deep recurrent neural networks for accurate variant calling in 21-hydroxylase-deficient congenital adrenal hyperplasia" (poster, 2018).   With Kyle Beauchamp, et al.  ASHG 2018.
 
-"Generating Transferable Adversarial Examples via Smooth Max Ensembling" (poster, 2017).  NIPS 2017 Competition Workshop.  Third Place Winner.
+"Generating Transferable Adversarial Examples via Smooth Max Ensembling" (poster, 2017).  With Yuchen Zhang, et al. NIPS 2017 Competition Workshop.  Third Place Winner.
+
 
 ## Open source
 
-`stanford-compendium`: A compilation of notes in mathematics and CS from my time at Stanford.
+Here are my [Gitlab](https://gitlab.com/acganesh) (preferred) and [Github](https://github.com/acganesh) profiles.
+
+[`stanford-compendium`](https://gitlab.com/acganesh/stanford-compendium): A compilation of notes in mathematics and CS from my time at Stanford (to date roughly 130 pages).
+
+[`torcs-autopilot`](https://github.com/acganesh/torcs-autopilot): Deep reinforcement learning for simulated autonomous driving.  Stanford CS229 final project.
+
+[`ChromaNet`](https://github.com/acganesh/ChromaNet): Deep learning for genomic chromatic profile prediction.  Stanford CS273B final project.
 
 `project-euler`: Solved ~140 mathematical and algorithmic problems on Project Euler.  Open source code forthcoming.
 
-`torcs-autopilot`: Deep reinforcement learning for simulated autonomous driving.  Stanford CS229 final project.
-
-`ChromaNet`: Deep learning for genomic chromatic profile prediction.  Stanford CS273B final project.
-
 ## Books
 
-I have been involved with math Olympiads, and have written two books which are distributed internationally.
+I have been involved with math Olympiads, and have written two problem books to guide student preparation.
 
 [108 Algebra Problems](https://bookstore.ams.org/xyz-5/), with Dr. Titu Andreescu, published with XYZ Press.
 
