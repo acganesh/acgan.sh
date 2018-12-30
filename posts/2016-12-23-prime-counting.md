@@ -36,13 +36,9 @@ $$ \frac{(b+a-2)(b-a+1)}{2} - \sum_{a < i \leq b} \pi \left ( \frac{x}{p_i} \rig
 
 where
 
-$$a = \pi(x^{1/4})$$
+$$ a = \pi(x^{1/4}); \qquad b = \pi(x^{1/2}) $$
 
-$$b = \pi(x^{1/2})$$
-
-$$b_i = \pi(\sqrt{x/p_i})$$
-
-$$c = \pi(x^{1/3}).$$
+$$ b_i = \pi(\sqrt{x/p_i}); \qquad c = \pi(x^{1/3}) $$
 
 Before diving into the mathematics, I will first discuss other simpler approaches to compute $\pi(x)$, due to Eratosthenes and Legendre.
 
