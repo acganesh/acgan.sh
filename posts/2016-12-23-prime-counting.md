@@ -4,6 +4,8 @@ title: Efficient Prime Counting with the Meissel-Lehmer Algorithm
 date: 2016-12-23
 ---
 
+# Efficient prime counting with the Meissel-Lehmer algorithm
+
 Computing $\pi(x)$, the number of primes $p \leq x$ is a classic problem in algorithmic number theory.  The prime number theorem describes the asymptotic growth of this function, and states that
 
 $$
