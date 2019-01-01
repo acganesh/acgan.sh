@@ -27,7 +27,11 @@ In this article, I will discuss the mathematical basis of the Meissel-Lehmer alg
 
 ## Algorithm Overview
 
-In the 1870s, the German astronomer Ernst Meissel discovered a combinatorial method to compute $\pi(x)$, which was extended and simplified by Derrick H. Lehmer in 1959 [^1].
+In the 1870s, the German astronomer Ernst Meissel discovered a combinatorial method to compute $\pi(x)$, which was extended and simplified by Derrick H. Lehmer in 1959<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+D. H. Lehmer, [“On the exact number of primes less than a given limit”](http://projecteuclid.org/euclid.ijm/1255455259), *Illinois Journal of Mathematics*, vol. 3, pp. 381–388, 1959.
+</span>.
+
+
 
 The Meissel-Lehmer algorithm allows us to compute $\pi(x)$ in $O\left (\frac{x}{(\ln x)^4} \right )$ time using $O\left (\frac{x^{1/3}}{\ln x} \right )$ space.  Let $p_1, p_2, \dots$ denote the prime numbers.  The algorithm allows us to compute $\pi(x)$ as follows: 
 
@@ -80,7 +84,10 @@ Legendre's formula to compute $\pi(x)$ is as follows:
 
 $$ \pi(x) + 1 = \pi(\sqrt{x}) + \lfloor x \rfloor - \sum_{p_i \leq \sqrt{x}} \left \lfloor \frac{x}{p_i} \right \rfloor + \sum_{p_i < p_j \leq \sqrt{x}} \left \lfloor \frac{x}{p_i p_j} \right \rfloor - \sum_{p_i < p_j < p_k \leq \sqrt{x}} \left \lfloor \frac{x}{p_i p_j p_k} \right \rfloor + \dots.$$
 
-It is an improvement over sieving, as it does not require the calculation of all of the primes $\leq x$.  Still, it is not very computationally efficient, as using it involves the calculation of approximately $\frac{6x(1-\log 2)}{\pi^2}$ terms[^2].  It is nevertheless useful to examine, as it is similar to the Meissel-Lehmer algorithm we will discuss next.
+It is an improvement over sieving, as it does not require the calculation of all of the primes $\leq x$.  Still, it is not very computationally efficient, as using it involves the calculation of approximately $\frac{6x(1-\log 2)}{\pi^2}$ terms <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Lagarias, J. C., V. S. Miller, and A. M. Odlyzko. ["Computing $\pi(x)$: The Meissel-Lehmer Method."](http://www.ams.org/journals/mcom/1985-44-170/S0025-5718-1985-0777285-5/S0025-5718-1985-0777285-5.pdf) *Mathematics of Computation.* 44.170 (1985): 537. Web.
+</span>.  It is nevertheless useful to examine, as it is similar to the Meissel-Lehmer algorithm we will discuss next.
+
 
 This formula is a direct consequence of the [inclusion-exclusion principle](https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle).  It uses the observation that the number of primes in $[1, x]$ plus 1 (the quantity on the left of the equation) is equal to the number of integers minus the number of composite numbers in the interval.
 
@@ -160,8 +167,7 @@ $$
 
 which follows from the definition of $\phi$: the integers not divisible by any of the primes $p_1, \dots, p_a$ are exactly those integers which are not divisible by any of $p_1, p_2, \dots, p_{a-1}$, excluding those that are not divisible by $p_a$.  Repeatedly applying this identity will eventually lead to $\phi(x, 1)$, which is just the number of odd numbers $\leq x$. 
 
-In the implementation below, $\phi$ is computed using a memoized recursive procedure.  It turns out that one can make this computation more efficient by applying a truncation rule during the recursive chain.  The details of how to do this are somewhat involved, but the interested reader can refer to [^2] and [^3].
-
+In the implementation below, $\phi$ is computed using a memoized recursive procedure.  It turns out that one can make this computation more efficient by applying a truncation rule during the recursive chain.  The details of how to do this are somewhat involved, but the interested reader can refer to [^2] and <label class="margin-toggle" "sidenote-number"></label> <span class="sidenote">Riesel, Hans.  [*Prime Numbers and Computer Methods for Factorization.*](http://www.amazon.com/Numbers-Computer-Factorization-Progress-Mathematics/dp/0817637435) Boston: Birkhäuser, 1985.</span>
 
 ```python
 from bisect import bisect
@@ -251,22 +257,6 @@ def pi(x):
 
 While the Meissel-Lehmer algorithm is quite fast for most practical purposes, there are algorithms that are known to be more efficient.  Based on the work on Meissel and Lehmer, in 1985 Lagarias, Miller and Odlyzko found an algorithm[^2] requiring $O( \frac{x^{2/3}}{\log x} )$ time and $O(x^{1/3} \log^2 x)$ space.  Lagarias and Odlyzko have also published a method describing how to compute $\pi(x)$ using an analytic approach[^4].
 
-In 1996, Deléglise and Rivat[^5] [^6] refined the Lagarias-Miller-Odlyzko method allowing one to save a factor of $\log x$ in the time complexity, at the cost of an increase by a factor of $\log x \log \log x$ in space.  In 2001, Gourdon[^7] published refinements to the Deléglise-Rivat method that saves constant factors in time and space complexity.
+In 1996, Deléglise and Rivat<label class="margin-toggle sidenote-number"></label><span class="sidenote">Deleglise, M., and J. Rivat. ["Computing $\pi(x)$: The Meissel, Lehmer, Lagarias, Miller, Odlyzko Method."](http://www.ams.org/journals/mcom/1996-65-213/S0025-5718-96-00674-6/S0025-5718-96-00674-6.pdf) *Mathematics of Computation.* 65.213 (1996): 235-46. Web.<br>Silva, T. ["Computing $\pi(x)$: the combinatorial method."](http://sweet.ua.pt/tos/bib/5.4.pdf) *Revista do Detua.* 4.6 (2006): 759.</span> refined the Lagarias-Miller-Odlyzko method allowing one to save a factor of $\log x$ in the time complexity, at the cost of an increase by a factor of $\log x \log \log x$ in space.  In 2001, Gourdon<label class="margin-toggle sidenote-number"></label><span class="sidenote">X. Gourdon, "Computation of $\pi(x)$: Improvements to the Meissel, Lehmer, Lagarias, Miller, Odlyzko, Deléglise and Rivat method."  Available from [numbers.computation.free.fr/Constants/Primes/Pix/piNalgorithm.ps](numbers.computation.free.fr/Constants/Primes/Pix/piNalgorithm.ps)</span> published refinements to the Deléglise-Rivat method that saves constant factors in time and space complexity.
 
 Kim Walisch's excellent [`primecount`](https://github.com/kimwalisch/primecount) software package provides highly optimized C++ implementations of many of these algorithms, with support for OpenMP parallelization.  In September of 2015, this software was used to produce a [record-breaking computation of $\pi(10^{27})$](http://www.mersenneforum.org/showthread.php?t=20473), using 16-core EC2 r3.8xlarge instances and a 36-core Xeon server.  Using the Deléglise-Rivat method, the computation took 23.03 CPU core years, and the peak memory usage was 235 gigabytes!
-
-## References 
-
-[^1]: D. H. Lehmer, [“On the exact number of primes less than a given limit”](http://projecteuclid.org/euclid.ijm/1255455259), *Illinois Journal of Mathematics*, vol. 3, pp. 381–388, 1959.
-
-[^2]: Lagarias, J. C., V. S. Miller, and A. M. Odlyzko. ["Computing $\pi(x)$: The Meissel-Lehmer Method."](http://www.ams.org/journals/mcom/1985-44-170/S0025-5718-1985-0777285-5/S0025-5718-1985-0777285-5.pdf) *Mathematics of Computation.* 44.170 (1985): 537. Web.
-
-[^3]: Riesel, Hans.  [*Prime Numbers and Computer Methods for Factorization.*](http://www.amazon.com/Numbers-Computer-Factorization-Progress-Mathematics/dp/0817637435) Boston: Birkhäuser, 1985.
-
-[^4]: Lagarias, J.C., and A. M. Odlyzko. ["Computing $\pi(x)$: An Analytic Method."](http://www.dtc.umn.edu/~odlyzko/doc/arch/analytic.pi.of.x.pdf) *Journal of Algorithms* 8.2 (1987): 173-91. Web.
-
-[^5]: Deleglise, M., and J. Rivat. ["Computing $\pi(x)$: The Meissel, Lehmer, Lagarias, Miller, Odlyzko Method."](http://www.ams.org/journals/mcom/1996-65-213/S0025-5718-96-00674-6/S0025-5718-96-00674-6.pdf) *Mathematics of Computation.* 65.213 (1996): 235-46. Web.
-
-[^6]: Silva, T. ["Computing $\pi(x)$: the combinatorial method."](http://sweet.ua.pt/tos/bib/5.4.pdf) *Revista do Detua.* 4.6 (2006): 759.
-
-[^7]: X. Gourdon, "Computation of $\pi(x)$: Improvements to the Meissel, Lehmer, Lagarias, Miller, Odlyzko, Deléglise and Rivat method."  Available from [numbers.computation.free.fr/Constants/Primes/Pix/piNalgorithm.ps](numbers.computation.free.fr/Constants/Primes/Pix/piNalgorithm.ps).
