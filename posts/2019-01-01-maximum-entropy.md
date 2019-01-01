@@ -213,7 +213,7 @@ constraints?
 *Problem statement.* Maximize the entropy $h(f)$ over all probability
 densities $f$ satisfying the moment constraints below, where $S$ is the
 support set. $$\begin{aligned}
-  \int_{S} f(x) r_i(x) dx = \alpha_i; \text{ for } 1 \leq i \leq m. \qquad \eqno(*)\end{aligned}$$
+  \int_{S} f(x) r_i(x) dx = \alpha_i; \text{ for } 1 \leq i \leq m. \qquad *\end{aligned}$$
 
 In particular, $f$ is a density on support set $S$ meeting moment
 constraints $\alpha_1, \alpha_2, \dots, \alpha_m$.\
