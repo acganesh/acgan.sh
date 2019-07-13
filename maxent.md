@@ -13,10 +13,6 @@ Welcome to my blog, which is an informal platform for ideas I'm thinking about. 
 
 [The principle of maximum entropy](posts/2019-01-01-maximum-entropy.html)
 
-## Policy
-
-Accelerating research with distributed collaboration (WIP)
-
 ## Computer science
 
 [Efficient prime counting with the Meissel-Lehmer algorithm](posts/2016-12-23-prime-counting.html)
