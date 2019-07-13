@@ -13,6 +13,8 @@ Welcome to my blog, which is an informal platform for ideas I'm thinking about. 
 
 [The principle of maximum entropy](posts/2019-01-01-maximum-entropy.html)
 
+[Polya-Burnside enumeration in combinatorics](posts/2019-07-13-polya-burnside.html)
+
 ## Computer science
 
 [Efficient prime counting with the Meissel-Lehmer algorithm](posts/2016-12-23-prime-counting.html)
