@@ -8,11 +8,15 @@ nocite: '[@*]'
 title: The modern algorithmic toolbox
 ---
 
+$$
+\newcommand{\mbf}{\mathbf}
+$$
+
 # The modern algorithmic toolbox
 
 These notes are based on an influential course I took at Stanford, [CS168: The Modern Algorithmic Toolbox](https://web.stanford.edu/class/cs168/index.html), taught by [Greg Valiant](https://theory.stanford.edu/~valiant/) in Spring 2018.
 
-I found it to be my favorite class at Stanford, as I think it's a versatile grab-bag of ideas that can be applied to many different domains.
+I found it to be my favorite technical class at Stanford, as I think it's a versatile grab-bag of ideas that can be applied to many different domains.
 
 ## Modern hashing
 
@@ -148,29 +152,76 @@ where $s_i$ is the $i$th singular value and $\mbf{u}_i, \mbf{v}_i$ are the corre
 
 ## Spectral graph theory
 
-Given a graph $G = (V, E)$ with $|V| = n$ vertices, we can define the Laplacian matrix as an $n \times n$ matrix $L_G =D - A4, where $D$ is the degree matrix and $A$ is the adjacency matrix.
+Given a graph $G = (V, E)$ with $|V| = n$ vertices, we can define the Laplacian matrix as an $n \times n$ matrix $L_G =D - A$, where $D$ is the degree matrix and $A$ is the adjacency matrix.  The eigenvalues of $L_G$ inform the structure of the graph.  We can show the following important result:
+
+**Theorem.** The number of zero eigenvalues of the Laplacian $L_G$ equals the number of connected components of the graph $G$.
+
+Small eigenvalues correspond to unit vectors $v$ that try to minimize the quantity $v^T L v = \frac{1}{2} \sum_{(i, j) \in E} (v(i) - v(j)$. A natural way to visualize a graph is to embedd a graph onto the eigenvectors corresponding to small eigenvalues.
+
+**Definition.** The *isoperimetric ratio* of a set $S$, denoted $\theta(S)$, is defined as
+
+$$
+\theta(S) = \frac{|\delta(S)|}{\min(|S|, |V \setminus S|)}.
+$$
+
+The following theorem shows the importance of the second eigenvalue of a graph's Laplacian.
+
+**Theorem.** Given any graph $G = (V, E)$ and any set $S \subset V$, the isoperimetric number of the graph satisfies
+
+$$
+\theta_G \geq \lambda_2 \left ( 1 - \frac{|S|}{|V|} \right ).
+$$
+
+For more on machine learning on graphs, see Matthew Das Sarma's [article in *The Gradient*](https://thegradient.pub/structure-learning/).
 
 ## Sampling and estimation
 
-- Reservoir sampling
+We discuss *reservoir sampling,* originally due to Vitter in 1985.  Given a number $k$, and a datastream $x_1, x_2, \dots, $ of length greater than $k$:
+
+- Put the first $k$ elements of the stream into a "reservoir" $R = (x_1, \dots, x_k)$.
+
+- For $i \geq k+1$:
+
+  - With probability $\frac{k}{i}$ replace a random entry of $R$ with $x_i$.
+
+- At the end of the stream, return the resource $R$.
+
+Importantly, the reservoir $R$ consists of a uniformly random subset of $k$ of the entries of $x_1, x_2, \dots, x_t$.
 
 ## The Fourier perspective
 
 Recall that the Fourier transform of a function $f$ is defined as follows:
 
 $$
-\hat{f} = \int_{-\infty}^{\infty} f(x) \exp( - 2 \pi i x \xi) \, dx.
+\hat{f}(s) = \int_{-\infty}^{\infty} e^{- 2 \pi i s t} f(t) \, dt.
 $$
 
 This allows us to transition between the time domain and the frequency domain.
 
+Let $\mathcal{F}$ denote the Fourier transform operator. The *convolution theorem* states that 
+
+$$
+\mathcal{F} \{ f * g \} = \mathcal{F} \{ f \} \cdot \mathcal{F} \{ g \}.
+$$
+
 ## Sparse vector / matrix recovery
 
-(compressed sensing, Candes, Tao)
+Often, we can reconstruct sparse signals with a few linear measurements.
+
+**Theorem.** Fix a signal length $n$ and a sparsity level $k$.  Let $\mbf{A}$ be an $m \times n$ matrix with $m = \Theta (k \log \frac{n}{k} )$ rows, with each of its $mn$ entries chosen independently from the standard Gaussian distribution.  With high probability over the choice of $\mbf{A}$, every $k$-sparse signal $\mbf{z}$ can be efficiently recovered from $\mbf{b} = \mbf{Az}$.
 
 ## Privacy-preserving computation
 
-(differential privacy)
+It's possible to define randomized algorithm that are privacy preserving.  The key definition is that of *differential privacy*:
+
+**Definition.** A randomized algorithm $\mathcal{M}$ with domain $\mathbb{N}^{|\mathcal{X}|}$ is $(\epsilon, \delta)$-differentially private if for all $\mathcal{S} \subseteq \text{Range}(\mathcal{M})$ and for all $x, y \in \mathbb{N}^{|\mathcal{X}|}$ such that $||x - y ||_1 \leq 1$, we have
+
+$$
+\text{Pr}[\mathcal{M}(x) \in \mathcal{S} ] \leq \exp (\epsilon) \Pr [ \mathcal{M}(y) \in \mathcal{S} ] + \delta,
+$$
+
+where the probability space is over the coin flips of the mechanism $\mathcal{M}$.
+
 
 ## References
 
@@ -178,4 +229,10 @@ This allows us to transition between the time domain and the frequency domain.
 
 - W. B. Johnson and J. Lindenstrauss.
 
+- Vitter
 
+- FT book
+
+- Gradient article
+
+- Compressed sensing (Tao, Candes)
