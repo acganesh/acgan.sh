@@ -26,7 +26,7 @@ Editor, [The Gradient](https://thegradient.pub/).  A digital publication focused
 
 ## Open source
 
-Here are my [Gitlab](https://gitlab.com/acganesh) (preferred) and [Github](https://github.com/acganesh) profiles.
+Here is my [Github](https://github.com/acganesh) profile.
 
 [`stanford-compendium`](https://gitlab.com/acganesh/stanford-compendium): A compilation of notes in mathematics and CS from my time at Stanford (to date roughly 130 pages).
 
