@@ -1,0 +1,3006 @@
+%% ================================================================================
+%% This LaTeX file was created by AbiWord.                                         
+%% AbiWord is a free, Open Source word processor.                                  
+%% More information about AbiWord is available at http://www.abisource.com/        
+%% ================================================================================
+
+\documentclass[a4paper,portrait,12pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{calc}
+\usepackage{setspace}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage[normalem]{ulem}
+%% Please revise the following command, if your babel
+%% package does not support en-US
+\usepackage[en]{babel}
+\usepackage{color}
+\usepackage{hyperref}
+ 
+\begin{document}
+
+
+\begin{flushleft}
+P\'{o}lya-Burnside Enumeration in Combinatorics
+\end{flushleft}
+
+
+\begin{flushleft}
+Adithya Ganesh
+\end{flushleft}
+
+
+
+
+
+1
+
+
+
+
+
+\begin{flushleft}
+A Class of Problems
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The following problem in chemistry is historically significant, as G. P\'{o}lya originally popularized his theory
+\end{flushleft}
+
+
+\begin{flushleft}
+through applications in chemical enumeration. How many different chemical compounds can be made by
+\end{flushleft}
+
+
+\begin{flushleft}
+attaching H, CH3 , or OH radicals to each of the carbon atoms in the benzene ring pictured below?
+\end{flushleft}
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+G. P\'{o}lya, R. C. Read (1987). Combinatorial Enumeration of Groups, Graphs, and Chemical Compounds. New York: Springer-Verlag.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Here are other problems that can be approached using P\'{o}lya-Burnside.
+\end{flushleft}
+
+
+\begin{flushleft}
+1. In how many ways can an n × n tablecloth be colored with k colors?
+\end{flushleft}
+
+
+\begin{flushleft}
+2. How many different necklaces can be made with n beads and k colors?
+\end{flushleft}
+
+
+\begin{flushleft}
+3. How many ways can the faces of a polyhedron be colored using at most n colors?
+\end{flushleft}
+
+
+\begin{flushleft}
+4. Find the number of simple graphs with n vertices, up to isomorphism.
+\end{flushleft}
+
+
+\begin{flushleft}
+One can observe a common theme of enumerating the number of objects with some equivalence under
+\end{flushleft}
+
+
+\begin{flushleft}
+symmetry.
+\end{flushleft}
+
+
+
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+An Example: Coloring a Flag
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Problem:
+\end{flushleft}
+
+
+\begin{flushleft}
+How many ways are there to color a flag with n stripes lined side by side with k colors?
+\end{flushleft}
+
+
+···
+
+
+\begin{flushleft}
+n stripes, k colors
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Do not count as different flags with colors {``}flipped.'' The following two flags would be considered the same:
+\end{flushleft}
+
+
+
+
+
+1
+
+
+
+
+
+\newpage
+2.1
+
+
+
+
+
+\begin{flushleft}
+Solving it with Standard Methods
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Let's take the simple case when n = 4 and k = 2.
+\end{flushleft}
+
+
+\begin{flushleft}
+Assume we count the number of patterns normally, without accounting for reflection. N = 24 . Let Nr denote
+\end{flushleft}
+
+
+4
+
+
+\begin{flushleft}
+the number of distinct colorings under reflection. Nr 6= 22 , as one might think! We need to separately handle
+\end{flushleft}
+
+
+\begin{flushleft}
+symmetric patterns and asymmetric patterns.
+\end{flushleft}
+
+
+\begin{flushleft}
+An asymmetric pattern like
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+yields a new pattern that we don't want to double count ,
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+, when it is reflected. Should be divided by 2.
+\end{flushleft}
+
+
+\begin{flushleft}
+A symmetric pattern like
+\end{flushleft}
+
+
+\begin{flushleft}
+divide by 2 here.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+when reflected does not create a new pattern. We don't need to
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Let A be the number of asymmetric patterns not accounting for reflection, and S be the number of symmetric
+\end{flushleft}
+
+
+\begin{flushleft}
+patterns. (Note that A + S = 24 .)
+\end{flushleft}
+
+
+\begin{flushleft}
+The number of patternings accounting for reflection, Nr , is given by
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Nr =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+24 $-$ S
+\end{flushleft}
+
+
+\begin{flushleft}
+A
+\end{flushleft}
+
+
+\begin{flushleft}
++S =
+\end{flushleft}
+
+
+\begin{flushleft}
++S
+\end{flushleft}
+
+
+2
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+S = 22 , since picking the first two squares uniquely defines the last two. Hence Nr =
+\end{flushleft}
+
+
+\begin{flushleft}
+Exercise. Show that in the general case, Nr =
+\end{flushleft}
+
+
+
+
+
+2.2
+
+
+
+
+
+24 $-$22
+
+
+2
+
+
+
+
+
++ 22 = 10.
+
+
+
+
+
+\begin{flushleft}
+kn +kb(n+1)/2c
+\end{flushleft}
+
+
+.
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+Applying P\'{o}lya's Theory
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+We will first apply P\'{o}lya's method without explaining how it works.
+\end{flushleft}
+
+
+\begin{flushleft}
+Solution.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Cycle Notation
+\end{flushleft}
+
+
+?
+
+
+\begin{flushleft}
+Any permutation can be expressed as the product of cycles. For instance,
+\end{flushleft}
+
+
+
+
+
+1
+
+
+5
+
+
+
+
+
+2
+
+
+1
+
+
+
+
+
+3
+
+
+4
+
+
+
+
+
+4
+
+
+3
+
+
+
+
+
+5
+
+
+2
+
+
+
+
+
+?
+
+
+= (1 5 2)(3 4).
+
+
+
+
+
+\begin{flushleft}
+Denote the flag patterning as a 4-letter string of colors abcd.
+\end{flushleft}
+
+
+\begin{flushleft}
+There are two symmetries:
+\end{flushleft}
+
+
+\begin{flushleft}
+1. the trivial identity permutation that maps abcd $\rightarrow$ abcd, specifically (a)(b)(c)(d),
+\end{flushleft}
+
+
+?
+
+
+\begin{flushleft}
+2. reflection permutation that maps abcd $\rightarrow$ dcba, specifically
+\end{flushleft}
+
+
+
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+b
+\end{flushleft}
+
+
+\begin{flushleft}
+c
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+c
+\end{flushleft}
+
+
+\begin{flushleft}
+b
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+d
+\end{flushleft}
+
+
+\begin{flushleft}
+a
+\end{flushleft}
+
+
+
+
+
+?
+
+
+\begin{flushleft}
+, or the cycle product
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+(a d)(b c).
+\end{flushleft}
+
+
+\begin{flushleft}
+The first is a product of four 1-cycles, and the second is the product of two 2-cycles. (An n-cycle is a cycle
+\end{flushleft}
+
+
+\begin{flushleft}
+of length n).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Cycle index polynomial
+\end{flushleft}
+
+
+\begin{flushleft}
+P =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+1 · f14 + 1 · f22
+\end{flushleft}
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+We make the following substitution: fn = xn + y n . We use two terms since we are considering two colors.
+\end{flushleft}
+
+
+\begin{flushleft}
+P becomes
+\end{flushleft}
+
+
+\begin{flushleft}
+P (x, y) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(x + y)4 + (x2 + y 2 )2
+\end{flushleft}
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+To find the answer from before, we add the coefficients of this polynomial. This is equivalent to taking P (1, 1),
+\end{flushleft}
+
+
+4
+
+
+2
+
+
+\begin{flushleft}
+which gives 2 +2
+\end{flushleft}
+
+
+\begin{flushleft}
+= 10 , as from before. Importantly, not only is the sum equal, but the constituents of the
+\end{flushleft}
+
+
+2
+
+
+\begin{flushleft}
+sum are similar as well: this is a hint at some sort of combinatorial equivalence between the two processes.
+\end{flushleft}
+
+
+
+
+
+2.3
+
+
+
+
+
+\begin{flushleft}
+P is a Generating Function for Colorings
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Even more remarkably, P is a generating function for each coloring!
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+P = x4 + 2x3 y + 4x2 y 2 + 2xy 3 + y 4
+\end{flushleft}
+
+
+\begin{flushleft}
+The coefficient of xj y k gives the number of patterns with j squares colored with color 1 and k squares colored
+\end{flushleft}
+
+
+\begin{flushleft}
+with color 2.
+\end{flushleft}
+
+
+\begin{flushleft}
+Let color 1 be red and color 2 be blue.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+P = x4 + 2x3 y + 4x2 y 2 + 2xy 3 + y 4
+\end{flushleft}
+
+
+\begin{flushleft}
+The coefficient of xj y k gives the number of patterns with j squares colored with color 1 and k squares colored
+\end{flushleft}
+
+
+\begin{flushleft}
+with color 2.
+\end{flushleft}
+
+
+\begin{flushleft}
+Term
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Colorings
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+x4
+\end{flushleft}
+
+
+\begin{flushleft}
+2x3 y
+\end{flushleft}
+
+
+\begin{flushleft}
+4x2 y 2
+\end{flushleft}
+
+
+\begin{flushleft}
+2xy 3
+\end{flushleft}
+
+
+\begin{flushleft}
+y4
+\end{flushleft}
+
+
+
+
+
+3
+
+
+
+
+
+\begin{flushleft}
+Counting Necklaces: PuMAC 2009
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+2009 PUMaC Combinatorics A10 : Taotao wants to buy a bracelet. The bracelets have 7 different beads on
+\end{flushleft}
+
+
+\begin{flushleft}
+them, arranged in a circle. Two bracelets are the same if one can be rotated or flipped to get the other. If
+\end{flushleft}
+
+
+3
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Figure 1: Symmetries of a 7-gon
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Figure 2: Reflectional symmetry: vertices that get mapped to each other are the same color
+\end{flushleft}
+
+
+\begin{flushleft}
+she can choose the colors and placement of the beads, and the beads come in orange, white, and black, how
+\end{flushleft}
+
+
+\begin{flushleft}
+many possible bracelets can she buy?
+\end{flushleft}
+
+
+\begin{flushleft}
+Solution. Imagine the 7 beads at the vertices of a regular heptagon. See Figure 1.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+7-gon Symmetries
+\end{flushleft}
+
+
+\begin{flushleft}
+7 reflections through a vertex and midpoint of opposite side
+\end{flushleft}
+
+
+\begin{flushleft}
+7 rotations of n
+\end{flushleft}
+
+
+
+
+
+?
+
+
+360 ◦
+
+
+7
+
+
+
+
+
+\begin{flushleft}
+for n $\in$ 1, 2 · · · 7. (n = 7: identity case: 360 degree rotation).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Permutation Cycle Structure: Reflections
+\end{flushleft}
+
+
+\begin{flushleft}
+All the 7 reflections have the same cycle structure, by symmetry. This corresponds to the permutation
+\end{flushleft}
+
+
+\begin{flushleft}
+structure (1)(7 2)(6 3)(5 4): see Figure 2.
+\end{flushleft}
+
+
+\begin{flushleft}
+In the cycle index polynomial, this is 7f1 f23 , since we have one 1-cycle and three 2-cycles, and 7 such
+\end{flushleft}
+
+
+\begin{flushleft}
+reflections, since we can take a reflection through any vertex.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Permutation Cycle Structure: Rotations
+\end{flushleft}
+
+
+\begin{flushleft}
+All the 6 nonidentity rotations are 7-cycles, since 7 is a prime number. This contributes 6 · f7 .
+\end{flushleft}
+
+
+\begin{flushleft}
+To understand why this is true, ,we look at a case when n, the number of sides of the polygon, is composite.
+\end{flushleft}
+
+
+\begin{flushleft}
+In a hexagon, (6 sides, and 6 is composite) a rotation of 360/3◦ yields (1 3 5)(2 4 6), which would correspond
+\end{flushleft}
+
+
+\begin{flushleft}
+to f32 in the cycle index polynomial: see Figure 3.
+\end{flushleft}
+
+
+
+
+
+4
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Figure 3: 6 is composite, so we can have disjoint cycles
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The Identity The identity is trivially a product of seven 1-cycles, contribute 1 · f17 .
+\end{flushleft}
+
+
+\begin{flushleft}
+Cycle Index Polynomial
+\end{flushleft}
+
+
+\begin{flushleft}
+The cycle index polynomial is thus
+\end{flushleft}
+
+
+\begin{flushleft}
+7 · f1 f23 + 6 · f7 + 1 · f17
+\end{flushleft}
+
+
+14
+
+
+\begin{flushleft}
+Substituting fn = xn + y n + z n (since we have three colors), this is
+\end{flushleft}
+
+
+\begin{flushleft}
+f (x, y, z) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+7·(x+y+z)(x2 +y 2 +z 2 )3 +6(x7 +y 7 +z 7 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(x+y+z)7
+\end{flushleft}
+
+
+
+
+
+14
+
+
+
+
+
+\begin{flushleft}
+The sum of the coefficients is the desired answer.
+\end{flushleft}
+
+
+\begin{flushleft}
+Plugging in 1, we find
+\end{flushleft}
+
+
+\begin{flushleft}
+f (1, 1, 1) =
+\end{flushleft}
+
+
+
+
+
+3.1
+
+
+
+
+
+7 · 34 + 6 · 3 + 3 7
+
+
+= 198
+
+
+14
+
+
+
+
+
+\begin{flushleft}
+Multinomial Theorem: Generalizing the Binomial Theorem
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Recall: coefficient of xi y j z k corresponds to the number of necklaces with i of the first color, j of the second
+\end{flushleft}
+
+
+\begin{flushleft}
+color, and k of the third.
+\end{flushleft}
+
+
+\begin{flushleft}
+(You can replace necklaces with whatever entity you desire, and color with whatever assignment you desire,
+\end{flushleft}
+
+
+\begin{flushleft}
+such as chemical radicals.)
+\end{flushleft}
+
+
+\begin{flushleft}
+The binomial theorem:
+\end{flushleft}
+
+
+\begin{flushleft}
+(x + y)n =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+n ? ?
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+\begin{flushleft}
+X n!
+\end{flushleft}
+
+
+\begin{flushleft}
+n k n$-$k
+\end{flushleft}
+
+
+\begin{flushleft}
+x y
+\end{flushleft}
+
+
+=
+
+
+\begin{flushleft}
+xi y j
+\end{flushleft}
+
+
+\begin{flushleft}
+k
+\end{flushleft}
+
+
+\begin{flushleft}
+i!j!
+\end{flushleft}
+
+
+\begin{flushleft}
+i+j=n
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+k=0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+i,j$\geq$0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Generalizing,
+\end{flushleft}
+
+
+\begin{flushleft}
+(x + y + z)n =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+\begin{flushleft}
+i+j+k=n
+\end{flushleft}
+
+
+\begin{flushleft}
+i,j,k$\geq$0
+\end{flushleft}
+
+
+
+
+
+5
+
+
+
+
+
+\begin{flushleft}
+n! i j k
+\end{flushleft}
+
+
+\begin{flushleft}
+xy z
+\end{flushleft}
+
+
+\begin{flushleft}
+i!j!k!
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(w + x + y + z)n =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+i+j+k+l=n
+\end{flushleft}
+
+
+\begin{flushleft}
+i,j,k,l$\geq$0
+\end{flushleft}
+
+
+
+
+
+3.2
+
+
+
+
+
+\begin{flushleft}
+n!
+\end{flushleft}
+
+
+\begin{flushleft}
+w i xj y k z l
+\end{flushleft}
+
+
+\begin{flushleft}
+i!j!k!l!
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Calculating the number of necklaces of a type: Finding a coefficient of the
+\end{flushleft}
+
+
+\begin{flushleft}
+generating function
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Let's say we wanted to find the number of necklaces with 2 red beads, 2 orange beads, and 3 yellow beads:
+\end{flushleft}
+
+
+\begin{flushleft}
+x2 y 2 z 3 . We don't want to expand the generating function!
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+f (x, y, z) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+7·(x+y+z)(x2 +y 2 +z 2 )3 +6(x7 +y 7 +z 7 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(x+y+z)7
+\end{flushleft}
+
+
+
+
+
+14
+
+
+
+
+
+\begin{flushleft}
+To obtain x2 y 2 z 3 , in the first term, 7 · (x + y + z)(x2 + y 2 + z 2 )3 we must take a factor of z from (x + y + z),
+\end{flushleft}
+
+
+\begin{flushleft}
+and a factor of x2 from the first (x2 + y 2 + z 2 ), y 2 from the second, and z 2 from the third (or any possible
+\end{flushleft}
+
+
+\begin{flushleft}
+ordering).
+\end{flushleft}
+
+
+\begin{flushleft}
+There are 3! = 6 to pick the ordering of x2 , y 2 and z 2 , so the number of terms from here is 7 · 3! = 42.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+f (x, y, z) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+7·(x+y+z)(x2 +y 2 +z 2 )3 +6(x7 +y 7 +z 7 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(x+y+z)7
+\end{flushleft}
+
+
+
+
+
+14
+
+
+
+
+
+\begin{flushleft}
+In the middle term, 6(x7 + y 7 + z 7 ), we will not obtain any terms of our form.
+\end{flushleft}
+
+
+\begin{flushleft}
+In the last term, (x + y + z)7 we can just apply the multinomial theorem to find that the coefficient is
+\end{flushleft}
+
+
+7!
+
+
+= 210 .
+
+
+\begin{flushleft}
+nom72, 2, 3 = 2!2!3!
+\end{flushleft}
+
+
+\begin{flushleft}
+Thus the coefficient we want is
+\end{flushleft}
+
+
+7 · 3! +
+
+
+
+
+
+7
+
+
+2,2,3
+
+
+
+
+
+?
+
+
+
+
+
+14
+
+
+
+
+
+= 18
+
+
+
+
+
+\begin{flushleft}
+There are 18 necklaces with 2 red beads, 2 orange beads, and 3 yellow beads.
+\end{flushleft}
+
+
+
+
+
+3.3
+
+
+
+
+
+\begin{flushleft}
+A Symmetric Generating Function
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+f (x, y, z) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(x7 +y 7 +z 7 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(x6 y+xy 6 +x6 z+yz 6 +xz 6 +y 6 z)
+\end{flushleft}
+
+
+\begin{flushleft}
++(3x5 y 2 +3x5 z 2 +3y 2 z 5 +3x2 y 5 +3x2 z 5 +3y 5 z 2 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(3x5 yz+3xy 5 z+3xyz 5 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(4x4 y 3 +4y 4 z 3 +4y 3 z 4 +4x4 z 3 +4x3 y 4 +4x3 z 4 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(9x4 y 2 z+9x4 yz 2 +9x2 y 4 z+9x2 yz 4 +9xy 4 z 2 +9xy 2 z 4 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(10x3 y 3 z+10x3 yz 3 +10xy 3 z 3 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(18x3 y 2 z 2 +18x2 y 3 z 2 +18x2 y 2 z 3 )
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Why is the polynomial symmetric?
+\end{flushleft}
+
+
+
+
+
+6
+
+
+
+
+
+\newpage
+4
+
+
+
+
+
+\begin{flushleft}
+Computational Utility
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Just as in problem 1, casework is in principle possible.
+\end{flushleft}
+
+
+\begin{flushleft}
+Computuational utility: seen when we increase the number of beads or colors even modestly.
+\end{flushleft}
+
+
+\begin{flushleft}
+Suppose we have a necklace with 17 beads and 4 colors.
+\end{flushleft}
+
+
+\begin{flushleft}
+P =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+f117 + 16f17 + 17f1 f28
+\end{flushleft}
+
+
+34
+
+
+
+
+
+\begin{flushleft}
+Substituting,
+\end{flushleft}
+
+
+\begin{flushleft}
+P =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(w+x+y+z)17 +16(w17 +x17 +y 17 +z 17 )
+\end{flushleft}
+
+
+\begin{flushleft}
++17(w+x+y+z)(w2 +x2 +y 2 +z 2 )8
+\end{flushleft}
+
+
+
+
+
+34
+
+
+
+
+
+\begin{flushleft}
+P (1, 1, 1, 1) = 5054421344
+\end{flushleft}
+
+
+\begin{flushleft}
+You can use the multinomial theorem similarly to find specific coefficients. Number of cases increase fast,
+\end{flushleft}
+
+
+\begin{flushleft}
+but only 3 different permutation structures exist, making P\'{o}lya-Burnside easy to apply!
+\end{flushleft}
+
+
+
+
+
+5
+
+
+
+
+
+\begin{flushleft}
+Introduction to Group Theory
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Applications of Abstract Algebra/Group Theory
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ Matrix groups to study the symmetric groups of 3-D solids, various problems in physics, and crystallographic groups.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+$\bullet$ Extension fields for geometrical constructions, including the classical impossibility of duplicating the
+\end{flushleft}
+
+
+\begin{flushleft}
+cube, trisecting an angle, and squaring a circle.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(If n is a positive integer such that the regular n-gon is constructible with ruler and compass, then
+\end{flushleft}
+
+
+\begin{flushleft}
+Qk
+\end{flushleft}
+
+
+\begin{flushleft}
+m
+\end{flushleft}
+
+
+\begin{flushleft}
+n = 2k i=1 pi , where k $\geq$ 0 and the pi are distinct Fermat primes, that is, primes of the form 22 + 1.)
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ Combinatorial enumeration via group action on sets and Burnside 's Lemma (subject of this talk).
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Definition of a Group
+\end{flushleft}
+
+
+\begin{flushleft}
+A group (G, ∗) contains a set G of elements and a binary operation ∗.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ ∗ is closed on G. That is, if g, h $\in$ G, then g ∗ h $\in$ G.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ ∗ is associative. That is, if a, b, c $\in$ G, then a ∗ (b ∗ c) = (a ∗ b) ∗ c.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ There exists a (unique) identity element e $\in$ G such that for all g $\in$ G, we have g ∗ e = e ∗ g = g.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ For all g $\in$ G, there exists an inverse, denoted g $-$1 , such that g ∗ g $-$1 = g $-$1 ∗ g = e
+\end{flushleft}
+
+
+7
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Figure 4: Dihedral Group in Odd and Even Cases
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Basic Examples of Groups
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ (C, +), (R, +), (Q, +), (Z, +)
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ The set of symmetries of a rectangle, the Klein 4-group:
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ The group of all permutations of three elements, S3
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ The example most relevant to us: the dihedral group, Dn , the group all symmetries (rotational and
+\end{flushleft}
+
+
+\begin{flushleft}
+reflectional) of a regular n-sided polygon, with 2n elements.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The Dihedral Group, Dn
+\end{flushleft}
+
+
+\begin{flushleft}
+The dihedral group with 2n elements consists of the symmetries of an n-gon. We have two cases, n odd,
+\end{flushleft}
+
+
+\begin{flushleft}
+and n even.
+\end{flushleft}
+
+
+\begin{flushleft}
+When n odd, reflections are through a vertex and the midpoint of the opposite side. When n even, reflections
+\end{flushleft}
+
+
+\begin{flushleft}
+are through midpoints of opposite sides.
+\end{flushleft}
+
+
+
+
+
+6
+
+
+6.1
+
+
+
+
+
+\begin{flushleft}
+Group Action and Burnside's Lemma
+\end{flushleft}
+
+
+\begin{flushleft}
+Group Action on Sets
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+A group (G, ∗) acts on the set X if there is a function that takes pairs of elements in G and elements in X
+\end{flushleft}
+
+
+\begin{flushleft}
+-- (g, x) -- to new elements in X.
+\end{flushleft}
+
+
+\begin{flushleft}
+In our case, X will be the set of objects without accounting for symmetry.
+\end{flushleft}
+
+
+\begin{flushleft}
+More formally, the group (G, ∗) acts on the set X if there is a function
+\end{flushleft}
+
+
+\begin{flushleft}
+f :G×X $\rightarrow$X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+such that when we denote f (g, x) as g(x), we have
+\end{flushleft}
+
+
+\begin{flushleft}
+(g1 g2 )(x) = g1 (g2 (x)) for all g1 , g2 $\in$ G, x $\in$ X
+\end{flushleft}
+
+
+\begin{flushleft}
+e(x) = x if e is the identity of the group and x $\in$ X
+\end{flushleft}
+
+
+
+
+
+8
+
+
+
+
+
+\begin{flushleft}
+\newpage
+The Orbit and Stabilizer
+\end{flushleft}
+
+
+\begin{flushleft}
+If G acts on a set X and x $\in$ X, then the stabilizer of x is defined to be the set
+\end{flushleft}
+
+
+\begin{flushleft}
+Stab x = \{g $\in$ G | g(x) = x\}
+\end{flushleft}
+
+
+\begin{flushleft}
+that is, the set of elements in the group that take the element x to itself.
+\end{flushleft}
+
+
+\begin{flushleft}
+Similarly, let Fix g denote the number of elements of X fixed by g, that is the set \{x $\in$ X | g(x) = x\}.
+\end{flushleft}
+
+
+\begin{flushleft}
+The set of all outputs of an element x $\in$ X under group action is called the orbit defined as the set
+\end{flushleft}
+
+
+\begin{flushleft}
+Orb x = \{g(x) | g $\in$ G\}
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The Orbit-Stabilizer Theorem
+\end{flushleft}
+
+
+\begin{flushleft}
+If a finite group G acts on a set X, for each x $\in$ X, we have
+\end{flushleft}
+
+
+\begin{flushleft}
+|G| = |Stab x| |Orb x| .
+\end{flushleft}
+
+
+\begin{flushleft}
+where |G| denotes the number of elements in the group.
+\end{flushleft}
+
+
+\begin{flushleft}
+Intuition: First, recall that there are 24 rotational symmetries of a cube. There are 8 places one vertex can
+\end{flushleft}
+
+
+\begin{flushleft}
+go, and 3 places you can put one of its neighbors, yielding 8 · 3 = 24.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ Fix one face. You can move the cube 4 ways (you can only rotate it). These are the stabilizers.
+\end{flushleft}
+
+
+\begin{flushleft}
+$\bullet$ There are 6 faces you can pick. This is the orbit of the face.
+\end{flushleft}
+
+
+\begin{flushleft}
+Hence 4 · 6 = 24, the order of the group of cube symmetries, as expected.
+\end{flushleft}
+
+
+
+
+
+6.2
+
+
+
+
+
+\begin{flushleft}
+Burnside's Lemma
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Burnside's Lemma
+\end{flushleft}
+
+
+\begin{flushleft}
+If G is a finite group that acts on the elements of a finite set X, and N is the number of orbits of X under
+\end{flushleft}
+
+
+\begin{flushleft}
+G, then
+\end{flushleft}
+
+
+\begin{flushleft}
+1 X
+\end{flushleft}
+
+
+\begin{flushleft}
+N=
+\end{flushleft}
+
+
+\begin{flushleft}
+|Fix g|
+\end{flushleft}
+
+
+\begin{flushleft}
+|G|
+\end{flushleft}
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+The orbit of an element x $\in$ X refers to all possible colorings you can obtains by some rotation or reflection
+\end{flushleft}
+
+
+\begin{flushleft}
+on some coloring.
+\end{flushleft}
+
+
+\begin{flushleft}
+If we count the number of orbits, we are counting the number of colorings that are distinct under rotation
+\end{flushleft}
+
+
+\begin{flushleft}
+or reflection!
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Proof of Burnside's Lemma
+\end{flushleft}
+
+
+\begin{flushleft}
+Consider
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+P
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Fix g|.
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+But this is also
+\end{flushleft}
+
+
+\begin{flushleft}
+|S| =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Fix g| =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+\begin{flushleft}
+x$\in$X
+\end{flushleft}
+
+
+
+
+
+9
+
+
+
+
+
+\begin{flushleft}
+|Stab x|
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Representative elements from each orbit of X under G, x1 , x2 , · · · , xN .
+\end{flushleft}
+
+
+\begin{flushleft}
+If an element x is in the same orbit as xi , then Orb x = Orb xi , and by the orbit-stabilizer theorem,
+\end{flushleft}
+
+
+\begin{flushleft}
+|Stab x| = |Stab xi |.
+\end{flushleft}
+
+
+\begin{flushleft}
+We have
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Fix g| =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+N
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Stab x| =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+i=1 x$\in$Orb xi
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+N
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Orb xi | |Stab xi |
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+i=1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Which implies
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Fix g| =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+N
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Orb xi | |Stab xi |
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+i=1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+By the orbit-stabilizer theorem, each of the summands equals |G|.
+\end{flushleft}
+
+
+\begin{flushleft}
+Hence
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Fix g| =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+N
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Orb xi | |Stab xi | = N · |G|
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+i=1
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Burnside's Lemma follows:
+\end{flushleft}
+
+
+\begin{flushleft}
+N=
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+1 X
+\end{flushleft}
+
+
+\begin{flushleft}
+|Fix g|
+\end{flushleft}
+
+
+\begin{flushleft}
+|G|
+\end{flushleft}
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+7
+
+
+
+
+
+\begin{flushleft}
+Intuition: Why P\'{o}lya-Burnside Enumeration Works
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Plugging in 1 Yields Burnside's Lemma!
+\end{flushleft}
+
+
+\begin{flushleft}
+Recall the generating functions from the previous examples:
+\end{flushleft}
+
+
+\begin{flushleft}
+Problem 1: Number of different flag colorings
+\end{flushleft}
+
+
+\begin{flushleft}
+f (x, y) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+(x + y)4 + (x2 + y 2 )2
+\end{flushleft}
+
+
+2
+
+
+
+
+
+\begin{flushleft}
+24 : number of elements fixed by the identity.
+\end{flushleft}
+
+
+\begin{flushleft}
+22 : number of elements fixed by reflection across middle
+\end{flushleft}
+
+
+\begin{flushleft}
+2: order of |D2 |.
+\end{flushleft}
+
+
+\begin{flushleft}
+Problem 2: Number of different bracelets
+\end{flushleft}
+
+
+\begin{flushleft}
+g(x, y, z) =
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+7·(x+y+z)(x2 +y 2 +z 2 )3 +6(x7 +y 7 +z 7 )
+\end{flushleft}
+
+
+\begin{flushleft}
++(x+y+z)7
+\end{flushleft}
+
+
+
+
+
+14
+
+
+
+
+
+\begin{flushleft}
+7 · 34 : number of elements fixed by reflections
+\end{flushleft}
+
+
+\begin{flushleft}
+6 · 3: number of elements fixed by the six nonidentity rotations
+\end{flushleft}
+
+
+10
+
+
+
+
+
+\begin{flushleft}
+\newpage
+37 : number of elements fixed by identity
+\end{flushleft}
+
+
+\begin{flushleft}
+Note that plugging in 1 for all the variables gives you N =
+\end{flushleft}
+
+
+\begin{flushleft}
+f (1, 1) =
+\end{flushleft}
+
+
+
+
+
+1
+
+
+\begin{flushleft}
+|G|
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+P
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+g$\in$G
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+|Fix g|!
+\end{flushleft}
+
+
+
+
+
+24 + 22
+
+
+7 · 34 + 6 · 3 + 37
+
+
+\begin{flushleft}
+; g(1, 1) =
+\end{flushleft}
+
+
+2
+
+
+14
+
+
+
+
+
+\begin{flushleft}
+Why the Generating Function Substitution Works
+\end{flushleft}
+
+
+\begin{flushleft}
+Recall:
+\end{flushleft}
+
+
+\begin{flushleft}
+If an object that can be colored with k colors has a symmetry as follows: A permutation with p1 cycles of
+\end{flushleft}
+
+
+\begin{flushleft}
+length 1, p2 of length 2, pn of length n (pi = 0 allowed) contributes
+\end{flushleft}
+
+
+\begin{flushleft}
+f1p1 f2p2 · · · fnpn
+\end{flushleft}
+
+
+\begin{flushleft}
+to the cycle index polynomial. If you have k colors, substitute fi = (ci1 + ci2 + · · · + cik ).
+\end{flushleft}
+
+
+\begin{flushleft}
+Intuition. To count fixed elements, (|Fix g|), all entities in the respective cycles must be the same color!
+\end{flushleft}
+
+
+\begin{flushleft}
+In the generating function, ci1 cj2 ck3 represents i, j, k instances of c1 , c2 , c3 respectively.
+\end{flushleft}
+
+
+\begin{flushleft}
+To be the same, we can have substitute cpnn for any color, since it doesn't matter what color we pick, so we
+\end{flushleft}
+
+
+\begin{flushleft}
+substitute fi = (ci1 + ci2 + · · · + cik ).
+\end{flushleft}
+
+
+
+
+
+7.1
+
+
+
+
+
+\begin{flushleft}
+Examples: Why the Substitution Works
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Reflection in the four color flag example.
+\end{flushleft}
+
+
+\begin{flushleft}
+Let flag patterning by 4-letter string of colors abcd.
+\end{flushleft}
+
+
+\begin{flushleft}
+Permutation structure: abcd $\rightarrow$ dcba: (a d)(b c)
+\end{flushleft}
+
+
+\begin{flushleft}
+Term in cycle index polynomial: f22 .
+\end{flushleft}
+
+
+\begin{flushleft}
+Need to substitute f2 = x2 + y 2 .
+\end{flushleft}
+
+
+\begin{flushleft}
+For a pattern to be fixed, a = d and b = c, as in
+\end{flushleft}
+
+
+\begin{flushleft}
+If xi y j represents i, j instances of colors x, y, then x2 + y 2 provide two terms: we can either have both parts
+\end{flushleft}
+
+
+\begin{flushleft}
+of the cycle be red (x), or blue (y).
+\end{flushleft}
+
+
+\begin{flushleft}
+Rotation of a Hexagon: D6
+\end{flushleft}
+
+
+\begin{flushleft}
+In a hexagon, a rotation of 360/3◦ yields (1 3 5)(2 4 6)
+\end{flushleft}
+
+
+\begin{flushleft}
+In this case, we must have 1 = 3, 2 = 4, and 5 = 6.
+\end{flushleft}
+
+
+\begin{flushleft}
+Hence the cycle index term is f32 .
+\end{flushleft}
+
+
+\begin{flushleft}
+If we have two colors, substitute f32 = (x3 + y 3 )2 to give all possible colorings.
+\end{flushleft}
+
+
+11
+
+
+
+
+
+\begin{flushleft}
+\newpage
+Figure 5: 6 is composite, so we can have disjoint cycles
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+Figure 6: Reflectional symmetry: vertices that get mapped to each other are the same color
+\end{flushleft}
+
+
+\begin{flushleft}
+Reflection of a Heptagon: D7
+\end{flushleft}
+
+
+\begin{flushleft}
+Suppose we have a heptagon.
+\end{flushleft}
+
+
+\begin{flushleft}
+Notice that the permutation maps (1)(7 2)(6 3)(5 4).
+\end{flushleft}
+
+
+\begin{flushleft}
+This corresponds to the cycle structure f23 f1 .
+\end{flushleft}
+
+
+\begin{flushleft}
+We substitute fn = xn + y n giving f23 f1 = (x2 + y 2 )3 (x + y).
+\end{flushleft}
+
+
+\begin{flushleft}
+The reds, oranges, and greens have to be equal, so we must have either x2 or y 2 three times (so we cube).
+\end{flushleft}
+
+
+\begin{flushleft}
+Finally, the blue can be either color, x or y.
+\end{flushleft}
+
+
+
+
+
+8
+
+
+
+
+
+\begin{flushleft}
+Chemical Isomer Enumeration
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+How many different chemical compounds can be made by attaching H, CH3 , or OH radicals to each of the
+\end{flushleft}
+
+
+\begin{flushleft}
+carbon atoms in the benzene ring pictured below?
+\end{flushleft}
+
+
+
+
+
+12
+
+
+
+
+
+\begin{flushleft}
+\newpage
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+C
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+With your help, if time and volunteers!
+\end{flushleft}
+
+
+
+
+
+9
+
+
+
+
+
+\begin{flushleft}
+Additional Problems
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+With the exception of \#1, these are an assortment of problems in which it isn't immediately clear that
+\end{flushleft}
+
+
+\begin{flushleft}
+Burnside's Lemma can be applied.
+\end{flushleft}
+
+
+\begin{flushleft}
+Source: Art of Problem Solving Forums
+\end{flushleft}
+
+
+\begin{flushleft}
+1. Two of the squares of a 7 × 7 checkerboard are painted yellow, and the rest are painted green. Two
+\end{flushleft}
+
+
+\begin{flushleft}
+color schemes are equivalent if one can be obtained from the other by applying a rotation in the plane
+\end{flushleft}
+
+
+\begin{flushleft}
+of the board. How many inequivalent color schemes are possible? (AIME 1996, \#7)
+\end{flushleft}
+
+
+\begin{flushleft}
+2. Find the number of second-degree polynomials f (x) with integer coefficients and integer zeros for which
+\end{flushleft}
+
+
+\begin{flushleft}
+f (0) = 2010. (AIME 2010, \#10)
+\end{flushleft}
+
+
+\begin{flushleft}
+3. Two quadrilaterals are considered the same if one can be obtained from the other by a rotation and a
+\end{flushleft}
+
+
+\begin{flushleft}
+translation. How many different convex cyclic quadrilaterals are there with integer sides and perimeter
+\end{flushleft}
+
+
+\begin{flushleft}
+equal to 32? (AMC 12A 2010, \#25)
+\end{flushleft}
+
+
+\begin{flushleft}
+4. How many subsets \{x, y, z, t\} $\subset$ N are there that satisfy the following conditions?
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+12 $\leq$ x $<$ y $<$ z $<$ t
+\end{flushleft}
+
+
+\begin{flushleft}
+x + y + z + t = 2011
+\end{flushleft}
+
+
+\begin{flushleft}
+5. Prove that, for all positive integers n and k, we have
+\end{flushleft}
+
+
+\begin{flushleft}
+n|
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+n$-$1
+\end{flushleft}
+
+
+\begin{flushleft}
+X
+\end{flushleft}
+
+
+\begin{flushleft}
+i=0
+\end{flushleft}
+
+
+
+
+
+\begin{flushleft}
+where a|b means that a divides b.
+\end{flushleft}
+
+
+
+
+
+13
+
+
+
+
+
+\begin{flushleft}
+k gcd(i,n)
+\end{flushleft}
+
+
+
+
+
+\newpage
+
+
+
+\end{document}
