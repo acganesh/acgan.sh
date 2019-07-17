@@ -20,4 +20,3 @@ Welcome to my blog, which is an informal platform for ideas I'm thinking about. 
 [Efficient prime counting with the Meissel-Lehmer algorithm](posts/2016-12-23-prime-counting.html)
 
 [Software that writes software: the state of program synthesis (WIP, with _The Gradient_)](https://thegradient.pub/p/577a122d-df49-4e1f-8dc3-324f5c784236/)
-
