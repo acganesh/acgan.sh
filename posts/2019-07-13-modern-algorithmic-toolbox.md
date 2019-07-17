@@ -10,6 +10,9 @@ title: The modern algorithmic toolbox
 
 $$
 \newcommand{\mbf}{\mathbf}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
 $$
 
 # The modern algorithmic toolbox
@@ -75,7 +78,7 @@ If $p = 1$ we obtain the "Manhattan" distance, and for large $p$, $||x - y||_p$ 
 Suppose that our $n$ points of interest are $\mbf{x}_1, \dots, \mbf{x}_k \in \mathbb{R}^k$, where $k$ might be large.  Suppose we choose a random vector $\mbf{r} \in \RR^k$, and define a real-valued function $f_{\mbf{r}} : \mathbb{R}^k \to \mathbb{R}$ by taking an inner product for the datapoint with the random vector: 
 
 $$
-f_{\mbf{r}} (\mbf{x}) = \langle \mbf{x}, \mbf{r} \rangel = \sum_{j=1}^{k} x_j r_j.
+f_{\mbf{r}} (\mbf{x}) = \langle \mbf{x}, \mbf{r} \rangle = \sum_{j=1}^{k} x_j r_j.
 $$
 
 If we want to use this idea to approximately preserve Euclidean distances between points, the key question is how we pick the $r_j$'s.
@@ -91,11 +94,12 @@ $$
 $$
 
 For a fixed pair of vectors $\mbf{x, y} \in \mathbb{R}^k$, we have
-$$
+\begin{align*}
   ||f_{\mbf{A}}(\mbf{x}) - f_{\mbf{A}}(\mbf{y})||_2^2 &= || \frac{1}{\sqrt{d}} \mbf{Ax} - \frac{1}{\sqrt{d}} \mbf{Ay} ||_{2}^{2} \\
   &= \frac{1}{d} || \mbf{A(x-y)}||_2^2 \\
   &= \frac{1}{d} \sum_{i=1}^{d} (a_i^T(\mbf{x} - \mbf{y}))^2,
-$$
+\end{align*}
+
 where $a_i^T$ denotes the $i$-th row of $\mbf{A}$.  Since each row $a_i^T$ is a $k$-vector with entries chosen i.i.d. from a standard Guassian, each term
 $$
   (a_i^T (\mbf{x} - \mbf{y}))^2 = \left( \sum_{j=1}^{k} a_{ij} (x_j - y_j) \right)^2 
@@ -212,7 +216,7 @@ Often, we can reconstruct sparse signals with a few linear measurements.
 
 ## Privacy-preserving computation
 
-It's possible to define randomized algorithm that are privacy preserving.  The key definition is that of *differential privacy*:
+It's possible to define randomized algorithms that are privacy preserving.  The key concept is that of *differential privacy*.  Intuitively, an algorithm is differentially private if an observer seeing its output cannot tell whether a particular individual's information was used in the computation.
 
 **Definition.** A randomized algorithm $\mathcal{M}$ with domain $\mathbb{N}^{|\mathcal{X}|}$ is $(\epsilon, \delta)$-differentially private if for all $\mathcal{S} \subseteq \text{Range}(\mathcal{M})$ and for all $x, y \in \mathbb{N}^{|\mathcal{X}|}$ such that $||x - y ||_1 \leq 1$, we have
 
