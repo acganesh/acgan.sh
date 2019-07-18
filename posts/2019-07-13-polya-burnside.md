@@ -109,3 +109,7 @@ Here, the coefficient of $x^j y^k$ gives the number of patterns with $j$ squares
 
 (table)
 
+## Counting necklaces: PuMAC 2009
+
+*2009 PUMaC Combinatorics A10.*
+
