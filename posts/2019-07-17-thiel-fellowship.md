@@ -1,10 +1,7 @@
 ---
-author:
-- '[Adithya C. Ganesh]{.smallcaps}'
-bibliography:
-- 'refs.bib'
-nocite: '[@*]'
-title: The Thiel Fellowship: a restrospective
+layout: post
+title: The Thiel Fellowship - a restrospective
+date: 2019-07-19
 ---
 
 My story.
