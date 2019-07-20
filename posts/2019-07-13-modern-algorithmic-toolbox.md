@@ -11,8 +11,10 @@ title: The modern algorithmic toolbox
 $$
 \newcommand{\mbf}{\mathbf}
 \newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
 \newcommand{\la}{\langle}
 \newcommand{\ra}{\rangle}
+\DeclareMathOperator{\rank}{rank}
 $$
 
 # The modern algorithmic toolbox
@@ -153,6 +155,51 @@ where $s_i$ is the $i$th singular value and $\mbf{u}_i, \mbf{v}_i$ are the corre
 - Performing a rotation in the domain (multiplication by $\mbf{V}^T$)
 - Followed by scaling plus adding or deleting dimensions (multiplication by $\mbf{S}$)
 - Followed by a rotation in the range (multiplication by $\mbf{U}$).
+
+## Tensors and low-rank tensory recovery
+
+*Definition.* A $n_1 \times n_2 \times \dots \times n_k$ $k$-tensor is a set of $n_1 \cdot n_2 \cdots n_k$ numbers, which one interprets as being arranged in a $k$-dimensional hypercube.  Given such a $k$-tensor, $A$, we can refer to a specific element via $A_{i_1, i_2, \dots, i_k}$.
+
+We can define the rank of a tensor analogously to the rank of a matrix.  Recall that a matrix $M$ has rank $r$ if it can be written as $M = UV^T$, where $U$ has $r$ columns and $V$ has $r$ columns.  Let $u_1, \dots, u_r$ and $v_1, \dots, v_r$ denote these columns, note that
+$$
+M = \sum_{i=1}^{r} u_i v_i^T.
+$$
+That is, $M$ is the sum of $r$ rank one matrices, where the $i$th matrix is the *outer product* $u_i v_i^T$.  We can define an outer product for tensors:
+
+*Definition.* Given vectors $u, v, w$ or lengths $n, m,$ and $l$, respectively, their *tensor product* (or *outer product*) is the $n \times m \times l$ rank one 3-tensor dented $A = u \otimes v \otimes w$ with entries $A_{i, j, k} = u_i v_j w_k$.
+
+We can extend this definition to higher dimensions:
+
+*Definition.* Given vectors $v_1, \dots, v_k$ of lengths $n_1, n_2, \dots, n_k$, the *tensor product* denoted $v_1 \otimes v_2 \dots \otimes v_k$ is the $n_1 \times n_2 \times \dots \times n_k$ $k$-tensor $A$ with entry $A_{i_1, i_2, \dots, i_k} = v_1(i_1) \cdot v_2(i_2) \cdots v_k(i_k)$.
+
+This allows us to define the rank of a tensor, which we state for 3-tensors.
+
+*Definition.* A 3-tensor $A$ has rank $r$ if there exists 3 sets of $r$ vectors, $u_1, \dots, u_r$, $v_1, \dots, v_r$ and $w_1, \dots, w_r$ such that
+
+$$
+A = \sum_{i=1}^{r} u_i \otimes v_i \otimes w_i.
+$$
+
+Interestingly, most ideas from linear algebra for matrices do not apply to $k$-tensors for $k \geq 3$.  Here are some important differences between tensors and matrices.
+
+- Computing the rank of matrices is easy (e.g. use the singular-value decomposition).  Computing the rank of 3-tensors is NP-hard.
+
+- The rank $1$ approximation of a matrix $M$ is the same as the best rank 1 approximation of the matrix $M_2$ defined as the best rank 2 approximation of $M$.  This means that the best rank-$k$ approximation can be found by iteratively finding the best rank-1 approximation, and then subtracting it off.
+
+For $k$-tensors with $k \geq 3$, this is not always true.  If $u \times v \times w$ is the best rank 1 approximation of 3-tensor $A$, then it is possible that $\rank(A - u \times v \times w) > \rank (A)$.
+
+- For real-valued matrices, we have that the rank over $\RR$ and the rank over $\CC$ is the same, that is $\rank_{\mathbb{R}} (M) = \rank_{\mathbb{C}} (M)$.  For real-valued $k$-tensors, it is possible that the rank over complex vectors is smaller than the rank over real vectors.
+
+Surprisingly, low-rank decompositions for tensors are essentially unique (which is not true for matrices):
+
+*Theorem.* Given a 3-tensor $A$ of rank $k$, suppose there exists three sets of linearly independent vectors, $(u_1, \dots, u_k), (v_1, \dots, v_k), (w_1, \dots, w_k)$ such that
+
+$$
+A = \sum_{i=1}^{k} u_i \times v_i \times w_i.
+$$
+
+Then this rank $k$ decomposition is unique (up to scalar multiplication of the vectors), and these factors can be efficiently recovered, using Jenrich's algorithm.
+
 
 ## Spectral graph theory
 
