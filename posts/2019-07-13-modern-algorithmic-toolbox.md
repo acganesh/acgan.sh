@@ -110,7 +110,7 @@ is an unbiased estimator of $||\mbf{x} - \mbf{y}||_2^2$.
 
 ## Generalization and regularization
 
-There are many forms of generalization, e.g. $L_2, L_1, dropout$.  An important theorem is the following:
+There are many forms of generalization, e.g. $L_2, L_1$, dropout.  An important theorem is the following:
 
 If the number of data points $n$ satisfies $n > \frac{1}{\epsilon} \left ( \log h + \log \frac{1}{\delta} \right )$.
 
