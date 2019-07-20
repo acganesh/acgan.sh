@@ -156,7 +156,7 @@ where $s_i$ is the $i$th singular value and $\mbf{u}_i, \mbf{v}_i$ are the corre
 - Followed by scaling plus adding or deleting dimensions (multiplication by $\mbf{S}$)
 - Followed by a rotation in the range (multiplication by $\mbf{U}$).
 
-## Tensors and low-rank tensory recovery
+## Tensors and low-rank tensor recovery
 
 *Definition.* A $n_1 \times n_2 \times \dots \times n_k$ $k$-tensor is a set of $n_1 \cdot n_2 \cdots n_k$ numbers, which one interprets as being arranged in a $k$-dimensional hypercube.  Given such a $k$-tensor, $A$, we can refer to a specific element via $A_{i_1, i_2, \dots, i_k}$.
 
