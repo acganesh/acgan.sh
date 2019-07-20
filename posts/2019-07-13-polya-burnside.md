@@ -25,11 +25,8 @@ The following problem in chemistry is historically significant, as G. Pólya ori
 Here are other problems that can be approached using Pólya-Burnside.
 
 - In how many ways can an $n \times n$ tablecloth be colored with $k$ colors?
-
 - How many different necklaces can be made with $n$ beads and $k$ colors?
-
 - How many ways can the faces of a polyhedrons be colored using at most $n$ colors?
-
 - Find the number of simple graphs with $n$ vertices, up to isomorphism.
 
 These problems share a common theme of enumerating the number of objects with some equivalence under *symmetry.*
@@ -79,7 +76,6 @@ Denote the flag patterning as a 4-letter string of colors *abcd.*
 There are two symmetries:
 
 - The identity permutation that maps $abcd \to abcd$, specifically $(a)(b)(c)(d)$.
-
 - The reflection permutation that maps $abcd \to dcba$, that is $\mat{a & b & c & d \\ d & c & b & a}$, or the cycle product $\mat{a & d}\mat{b & c}$.
 
 We say that a cycle of length $n$ is an $n$-cycle.  The first symmetry is a product of four 1-cycles, and the second is the product of two 2-cycles 
@@ -206,7 +202,6 @@ Similarly, we can use the multinomial theorem as before to find specific coeffic
 To explain why this process works, we will briefly introduce group theory.  There are several applications of this area of mathematics, a few of which are listed below:
 
 - Matrix groups to study the symmetries of 3-D solids, various problems in physics, and crystallographic groups.
-
 - Extension fields for geometric constructions, including showing that duplicating the cube, trisecting an angle, and squaring a circle is impossible.
 
 (In fact, we can show that if $n$ is a positive integer such that the regular $n$-gon is constructible with rule and compass, then $n = 2^k \prod_{i=1}^{k} p_i$, where $k \geq 0$ and the $p_i$ are distinct Fermat primes, that is, primes of the form $2^{2^m} +1$.
@@ -218,22 +213,16 @@ To explain why this process works, we will briefly introduce group theory.  Ther
 We note that a group $(G, *)$ contains a set $G$ of elements and a binary operation $*$.  Importantly,
 
 - $*$ is closed on $G$.  That is, if $g, h \in G$, then $g * h \in G$.
-
 - $*$ is associative.  If $a, b, c \in G$, then $a * (b * c) = (a * b) * c$.
-
 - There exists a unique identity element $e \in G$ such that for all $g \in G$, we have $g * e = e*g = g$.
-
 - For all $g \in G$, there exists an inverse, denoted $g^{-1}$ such that $g * g^{-1} = g^{-1} * g = e$.
   
 There are many examples of groups, including:
 
 - $(\mathbb{C}, +), (\mathbb{R}, +), (\mathbb{Q}, +), (\mathbb{Z}, +)$.
-
 - The set of symmetries of a rectangle, the Klein 4-group.
-
 - The group of all permutations on three elements, $S_3$.
-
-- The example most relevant to this post: the *dihedral group,* $D_n$, the group of all symmetries (rotational and reflectional) of a regular $n$-side polygon, with $2n$ elements.
+- The example most relevant to this post: the *dihedral group,* $D_n$, the group of all symmetries (rotational and reflectional) of a regular $n$-sided polygon, with $2n$ elements.
 
 There are two main cases to consider.  If $n$ is odd$, reflections are through a vertex and a midpoint of the opposite side.  When $n$ is even, reflections are through midpoints of opposite sides.
 
@@ -277,7 +266,6 @@ where $|G|$ denotes the number of elements in the group.
 *Intuition.* We don't formally prove this result, but provide some intuition with the example of a cube's symmetries.  First, recall that there are 24 rotational symmetries of a cube.  There are 8 places one vertex can go, and 3 places you can put one of its neighbors, yielding $8 \cdot 3 = 24$ symmetries.  Now,
 
 - Fix one face.  You can move the cube 4 ways (you can only rotate it).  These are the stabilizers.
-
 - There are 6 faces you can pick.  This is the orbit of the face.
 
 Thus, $4 \cdot 6 = 24$, the order of the group of cube symmetries, as expected.
@@ -368,22 +356,16 @@ These additional problems were obtained from the Art of Problem Solving forum.
 With the exception of #1, these are an assortment of problems in which it may not be immediately clear that Burnside's lemma can be applied.
 
 1. Two of the squares of a $7 \times 7$ checkerboard are painted yellow, and the rest are painted green.  Two color schemes are equivalent if one can be obtained from the other by applying a rotation in the plane of the board.  How many inequivalent color schemes are possible? (AIME 1996, #7).
-
 2. Find the number of second-degree polynomials $f(x)$ with integer coefficients and integer zeros for which $f(0) = 2010$. (AIME 2010, #10).
-
 3. Two quadrilaterals are consider the same if one can be obtained from the other by a rotation and a translation.  How many different convex cyclic quadrilaterals are there with integer sides and perimeter equal to 32?  (AMC 12A 2010, #25).
-
 4. How many subsets $\{ x, y, z, t, \} \subset \mathbb{N}$ are there that satisfy the following conditions?
-
 $$
 12 \leq x < y < z < t,
 $$
 $$
 x+y+z+t = 2011.
 $$
-
 5. Prove that, for all positive integers $n$ and $k$, we have
-
 $$
 n | \sum_{i=0}^{n-1} k^{\gcd(i, n)},
 $$

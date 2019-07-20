@@ -183,7 +183,6 @@ $$
 Interestingly, most ideas from linear algebra for matrices do not apply to $k$-tensors for $k \geq 3$.  Here are some important differences between tensors and matrices.
 
 - Computing the rank of matrices is easy (e.g. use the singular-value decomposition).  Computing the rank of 3-tensors is NP-hard.
-
 - The rank $1$ approximation of a matrix $M$ is the same as the best rank 1 approximation of the matrix $M_2$ defined as the best rank 2 approximation of $M$.  This means that the best rank-$k$ approximation can be found by iteratively finding the best rank-1 approximation, and then subtracting it off.
 
 For $k$-tensors with $k \geq 3$, this is not always true.  If $u \times v \times w$ is the best rank 1 approximation of 3-tensor $A$, then it is possible that $\rank(A - u \times v \times w) > \rank (A)$.
@@ -230,11 +229,8 @@ For more on machine learning on graphs, see Matthew Das Sarma's [article in *The
 We discuss *reservoir sampling,* originally due to Vitter in 1985.  Given a number $k$, and a datastream $x_1, x_2, \dots, $ of length greater than $k$:
 
 - Put the first $k$ elements of the stream into a "reservoir" $R = (x_1, \dots, x_k)$.
-
 - For $i \geq k+1$:
-
   - With probability $\frac{k}{i}$ replace a random entry of $R$ with $x_i$.
-
 - At the end of the stream, return the resource $R$.
 
 Importantly, the reservoir $R$ consists of a uniformly random subset of $k$ of the entries of $x_1, x_2, \dots, x_t$.
@@ -277,13 +273,8 @@ where the probability space is over the coin flips of the mechanism $\mathcal{M}
 ## References
 
 - STOC paper
-
 - W. B. Johnson and J. Lindenstrauss.
-
 - Vitter
-
 - FT book
-
 - Gradient article
-
 - Compressed sensing (Tao, Candes)

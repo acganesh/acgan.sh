@@ -33,7 +33,6 @@ $$\begin{aligned}
 The discrete entropy satisfies the following basic properties:
 
 1.  $H(X) \geq 0$.
-
 2.  $H(X) \leq \log |\mathcal{X}|$, with equality if and only if $X$ is
     distributed uniformly over $\mathcal{X}$.
 
@@ -300,10 +299,8 @@ To estimate the distribution, she runs the following experiment:
 
 -   Randomly distribute $N$ quanta of probability, each worth
     $\frac{1}{N}$, among the $m$ possibilities.
-
 -   Check if the probability assignment is consistent with her prior
     information. If inconsistent: reject and try again.
-
 -   If the assignment agrees with her prior information, her estimated
     prior distribution $\mathbf{p}$ is given by $$\begin{aligned}
           \mathbf{p}_i = \frac{n_i}{N}; \qquad i \in \left\{ 1, 2, \dots, m \right\}
