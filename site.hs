@@ -23,6 +23,10 @@ main = hakyllWith config $ do
         route   idRoute
         compile compressCssCompiler
 
+    match "et-book/*/*" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match (fromList ["about.md", "projects.md", "maxent.md"]) $ do
         route   $ setExtension "html"
         compile $ customPandocCompiler
