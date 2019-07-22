@@ -243,7 +243,7 @@ $$
 \hat{f}(s) = \int_{-\infty}^{\infty} e^{- 2 \pi i s t} f(t) \, dt.
 $$
 
-This allows us to transition between the time domain and the frequency domain.
+This allows us to transition between the time domain and the frequency domain.  This means we can decompose arbitrary functions as sums of sines and cosines, which allows us to examine periodicity in a waveform.
 
 Let $\mathcal{F}$ denote the Fourier transform operator. The *convolution theorem* states that 
 
