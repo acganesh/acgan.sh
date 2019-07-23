@@ -251,6 +251,8 @@ $$
 \mathcal{F} \{ f * g \} = \mathcal{F} \{ f \} \cdot \mathcal{F} \{ g \}.
 $$
 
+In fact, convolutions used in deep learning today use FFT-based implementations, which tend to be faster (add source).
+
 ## Sparse vector / matrix recovery
 
 Often, we can reconstruct sparse signals with a few linear measurements.
