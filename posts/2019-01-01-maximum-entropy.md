@@ -343,11 +343,5 @@ Then $$\begin{aligned}
   \end{aligned}$$ If $\varphi$ is strictly convex, equality holds iff
 $X$ is uniformly distributed.
 
-**Graphical intuition.** The full proof is technical and out of the
-scope of this article. The following picture describes the intuition
-behind this proof.
-
-![image](img/jensen){width="\textwidth"}
-
 [^1]: This quantity is also known as the Kullback-Leibler (KL)
     divergence and has numerous applications in statistics and physics.
