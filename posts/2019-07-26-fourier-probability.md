@@ -14,3 +14,4 @@ Source: Group representations in probability and statistics
 - random walk on a lattice has connections to riffle shuffle
 - Fourier analysis on permutations
 - Metrics on groups
+- See Stein / Shakarchi
