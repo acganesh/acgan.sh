@@ -20,3 +20,5 @@ title: The modern algorithmic toolbox
 - Statistical significance
 
 - Sufficiency
+
+- GLMs / gwern-style analysis in R
