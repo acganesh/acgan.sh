@@ -262,14 +262,24 @@ Often, we can reconstruct sparse signals with a few linear measurements.
 
 It's possible to define randomized algorithms that are privacy preserving.  The key concept is that of *differential privacy*.  Intuitively, an algorithm is differentially private if an observer seeing its output cannot tell whether a particular individual's information was used in the computation.
 
-**Definition.** A randomized algorithm $\mathcal{M}$ with domain $\mathbb{N}^{|\mathcal{X}|}$ is $(\epsilon, \delta)$-differentially private if for all $\mathcal{S} \subseteq \text{Range}(\mathcal{M})$ and for all $x, y \in \mathbb{N}^{|\mathcal{X}|}$ such that $||x - y ||_1 \leq 1$, we have
+Let $\mathcal{A}: \mathcal{D}^n \to \mathcal{Y}$ be a randomized algorithm.  Let $D_1, D_2 \in \mathcal{D}^n$ be two databases that differ in at most one entry (these are called neighboring databases).
+
+**Definition.** Let $\epsilon > 0$.  We say that $\mathcal{A}$ is $\epsilon$-differential private if for all neighboring databases $D_1, D_2$, and for all subsets $Y \subset \mathcal{Y}$, we have
 
 $$
-\text{Pr}[\mathcal{M}(x) \in \mathcal{S} ] \leq \exp (\epsilon) \Pr [ \mathcal{M}(y) \in \mathcal{S} ] + \delta,
+\frac{\text{Pr}[A(D_1) \in Y]}{\text{Pr}[A(D_2) \in Y]} \leq \exp(\epsilon),
+$$
+where the probability is taken over the coin tosses of $\mathcal{A}$.
+
+(sidenote: by convention, if the numerator and denominator are both 0, we say that the ratio is 1).
+
+Intuitively, we can think of this definition as a game between two parties, Alice and Bob. (sidenote: add simplification: $A$ is permutation invariant, and the space $D$ is finite).  Alice picks an arbitrary $D \in \mathcal{D}^n$.  Let $D_{-n} = (d_1, \dots, d_{n-1})$, and let $D_{n, m} = (d_1, \dots, d_{n-1}, d_n = m)$, where $d_n = m$ means $d_n$ takes on the $m$-th value of $\mathcal{D}$.  Then Alice gives Bob the tuble $D_{-n}, y = \mathcal{A}(D)$.  Bob must then guess correctly the value of $d_n$.  If Alice draws $d_n$ uniformly at random, Bob's best guess for $d_n$ is
+
+$$
+\argmax_{j \in [m]} \text{Pr} [\mathcal{A} (D_{n, j}) = y ].
 $$
 
-where the probability space is over the coin flips of the mechanism $\mathcal{M}$.
-
+The key point is that if $\mathcal{A}$ is $\epsilon$-differentially private, then Bob won't be able to win much better than random guessing.
 
 ## References
 
@@ -279,3 +289,4 @@ where the probability space is over the coin flips of the mechanism $\mathcal{M}
 - FT book
 - Gradient article
 - Compressed sensing (Tao, Candes)
+- Differential privacy: https://people.eecs.berkeley.edu/~stephentu/writeups/6885-lec20-b.pdf
