@@ -4,7 +4,7 @@ author:
 bibliography:
 - 'refs.bib'
 nocite: '[@*]'
-title: The modern algorithmic toolbox
+title: Key statistical ideas
 ---
 
 - Statistical testing
