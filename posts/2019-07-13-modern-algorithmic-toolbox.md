@@ -275,7 +275,7 @@ where the probability is taken over the coin tosses of $\mathcal{A}$.
 
 (sidenote: by convention, if the numerator and denominator are both 0, we say that the ratio is 1).
 
-Intuitively, we can think of this definition as a game between two parties, Alice and Bob. (sidenote: add simplification: $A$ is permutation invariant, and the space $D$ is finite).  Alice picks an arbitrary $D \in \mathcal{D}^n$.  Let $D_{-n} = (d_1, \dots, d_{n-1})$, and let $D_{n, m} = (d_1, \dots, d_{n-1}, d_n = m)$, where $d_n = m$ means $d_n$ takes on the $m$-th value of $\mathcal{D}$.  Then Alice gives Bob the tuble $D_{-n}, y = \mathcal{A}(D)$.  Bob must then guess correctly the value of $d_n$.  If Alice draws $d_n$ uniformly at random, Bob's best guess for $d_n$ is
+Intuitively, we can think of this definition as a game between two parties, Alice and Bob. (sidenote: add simplification: $A$ is permutation invariant, and the space $D$ is finite).  Alice picks an arbitrary $D \in \mathcal{D}^n$.  Let $D_{-n} = (d_1, \dots, d_{n-1})$, and let $D_{n, m} = (d_1, \dots, d_{n-1}, d_n = m)$, where $d_n = m$ means $d_n$ takes on the $m$-th value of $\mathcal{D}$.  Then Alice gives Bob the tuple $D_{-n}, y = \mathcal{A}(D)$.  Bob must then guess correctly the value of $d_n$.  If Alice draws $d_n$ uniformly at random, Bob's best guess for $d_n$ is
 
 $$
 \argmax_{j \in [m]} \text{Pr} [\mathcal{A} (D_{n, j}) = y ].
