@@ -205,7 +205,7 @@ Given a graph $G = (V, E)$ with $|V| = n$ vertices, we can define the Laplacian 
 
 **Theorem.** The number of zero eigenvalues of the Laplacian $L_G$ equals the number of connected components of the graph $G$.
 
-Small eigenvalues correspond to unit vectors $v$ that try to minimize the quantity $v^T L v = \frac{1}{2} \sum_{(i, j) \in E} (v(i) - v(j)$. A natural way to visualize a graph is to embedd a graph onto the eigenvectors corresponding to small eigenvalues.
+Small eigenvalues correspond to unit vectors $v$ that try to minimize the quantity $v^T L v = \frac{1}{2} \sum_{(i, j) \in E} (v(i) - v(j)$. A natural way to visualize a graph is to embed a graph onto the eigenvectors corresponding to small eigenvalues.
 
 **Definition.** The *isoperimetric ratio* of a set $S$, denoted $\theta(S)$, is defined as
 
@@ -257,6 +257,8 @@ In fact, convolutions used in deep learning today use FFT-based implementations,
 Often, we can reconstruct sparse signals with a few linear measurements.
 
 **Theorem.** Fix a signal length $n$ and a sparsity level $k$.  Let $\mbf{A}$ be an $m \times n$ matrix with $m = \Theta (k \log \frac{n}{k} )$ rows, with each of its $mn$ entries chosen independently from the standard Gaussian distribution.  With high probability over the choice of $\mbf{A}$, every $k$-sparse signal $\mbf{z}$ can be efficiently recovered from $\mbf{b} = \mbf{Az}$.
+
+Intuitively, this means that given noisy readings of a true signal, we can often perfectly (or near-perfectly) recover the original signal using optimization.
 
 ## Privacy-preserving computation
 
