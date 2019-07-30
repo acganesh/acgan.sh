@@ -168,7 +168,7 @@ $(0, \infty)$ with mean $\mu$. Then $$\begin{aligned}
 exponential with mean $\mu$. That is,
 $p(x) = \frac{1}{\mu} \exp (- \frac{x}{\mu})$.
 
-This theorem has a natural interprettion in physics. Let $X$ be a random
+This theorem has a natural interpretation in physics. Let $X$ be a random
 variable describing the height of molecules in the atmosphere. The
 average potential energy of the molecules is fixed (mean $\lambda$), and
 the atmosphere tends to the distribution that has the maximum entropy.
