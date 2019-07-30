@@ -31,7 +31,7 @@ $$
 h(x) \pmod{n}.
 $$
 
-But this system breaks down if the number $N$ of caches is not static, but changes all the time.  $N$ might increase if the network administrator purchases additional infracture, or it might decrease if a cache disconnects from the network.  Unfortunately, $h(x) \pmod{n}$ and $h(x) \pmod{n+1}$ will in general be very different.
+But this system breaks down if the number $N$ of caches is not static, but changes all the time.  $N$ might increase if the network administrator purchases additional infrastructure, or it might decrease if a cache disconnects from the network.  Unfortunately, $h(x) \pmod{n}$ and $h(x) \pmod{n+1}$ will in general be very different.
 
 The standard solution to this problem is known as *consistent hashing*.
 
@@ -42,7 +42,7 @@ The standard solution to this problem is known as *consistent hashing*.
 
 Importantly, assuming that our hash function is well-behaved, the expected load on each of the $n$ cache servers is exactly $\frac{1}{n}$ of the number of the objects.
 
-To implement the `Lookup` and `Insert` operations for this setup, we use a balanced binary search tree (e.g. a red-black tree), since the `Successor` operation is fast.  Finding the cache responsable for storing a given object $x$ will then take $O(\log n)$ time.
+To implement the `Lookup` and `Insert` operations for this setup, we use a balanced binary search tree (e.g. a red-black tree), since the `Successor` operation is fast.  Finding the cache responsible for storing a given object $x$ will then take $O(\log n)$ time.
 
 This implementation was first described in Karger et al. 1997, STOC.  While consistent hashing is widely in use today, this paper was initially rejected because a reviewer felt that there were no practical applications for this technique.
 
@@ -60,7 +60,7 @@ $$
 
 This metric is useful for sparse data.  For instance, we might represent documents in terms of multisets of words they contain; in this setting the Jaccard similarity is often a good measure.
 
-*$\ell_p$ distance.  Given datapoints in $\mathbb{R}^d$, the Euclidean $(\ell_2)$ distance metric is defined as 
+*$\ell_p$ distance.*  Given datapoints in $\mathbb{R}^d$, the Euclidean $(\ell_2)$ distance metric is defined as 
 
 $$
 ||x - y||_{2} = \sqrt{\sum_{i=1}^{d} (x(i) - y(i))^2}.
@@ -101,7 +101,7 @@ For a fixed pair of vectors $\mbf{x, y} \in \mathbb{R}^k$, we have
   &= \frac{1}{d} \sum_{i=1}^{d} (a_i^T(\mbf{x} - \mbf{y}))^2,
 \end{align*}
 
-where $a_i^T$ denotes the $i$-th row of $\mbf{A}$.  Since each row $a_i^T$ is a $k$-vector with entries chosen i.i.d. from a standard Guassian, each term
+where $a_i^T$ denotes the $i$-th row of $\mbf{A}$.  Since each row $a_i^T$ is a $k$-vector with entries chosen i.i.d. from a standard Gaussian, each term
 $$
   (a_i^T (\mbf{x} - \mbf{y}))^2 = \left( \sum_{j=1}^{k} a_{ij} (x_j - y_j) \right)^2 
 $$
@@ -275,7 +275,7 @@ where the probability is taken over the coin tosses of $\mathcal{A}$.
 
 (sidenote: by convention, if the numerator and denominator are both 0, we say that the ratio is 1).
 
-Intuitively, we can think of this definition as a game between two parties, Alice and Bob. (sidenote: add simplification: $A$ is permutation invariant, and the space $D$ is finite).  Alice picks an arbitrary $D \in \mathcal{D}^n$.  Let $D_{-n} = (d_1, \dots, d_{n-1})$, and let $D_{n, m} = (d_1, \dots, d_{n-1}, d_n = m)$, where $d_n = m$ means $d_n$ takes on the $m$-th value of $\mathcal{D}$.  Then Alice gives Bob the tuple $D_{-n}, y = \mathcal{A}(D)$.  Bob must then guess correctly the value of $d_n$.  If Alice draws $d_n$ uniformly at random, Bob's best guess for $d_n$ is
+Intuitively, we can think of this definition as a game between two parties, Alice and Bob. (sidenote: add simplification: $A$ is permutation invariant, and the space $D$ is finite).  Alice picks an arbitrary $D \in \mathcal{D}^n$.  Let $D_{-n} = (d_1, \dots, d_{n-1})$, and let $D_{n, m} = (d_1, \dots, d_{n-1}, d_n = m)$, where $d_n = m$ means $d_n$ takes on the $m$-th value of $\mathcal{D}$.  Then Alice gives Bob the tuble $D_{-n}, y = \mathcal{A}(D)$.  Bob must then guess correctly the value of $d_n$.  If Alice draws $d_n$ uniformly at random, Bob's best guess for $d_n$ is
 
 $$
 \argmax_{j \in [m]} \text{Pr} [\mathcal{A} (D_{n, j}) = y ].
