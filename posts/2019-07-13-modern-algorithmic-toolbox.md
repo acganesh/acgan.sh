@@ -14,6 +14,7 @@ $$
 \newcommand{\la}{\langle}
 \newcommand{\ra}{\rangle}
 \DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\argmax}{argmax}
 $$
 
 # The modern algorithmic toolbox
@@ -123,7 +124,13 @@ where $c$ is a sufficiently large constant.  Then with probability at least $1 -
   \text{generalization error of } \hat{f} \in \text{training error of } \hat{f} \pm \varepsilon.
 \end{align*}
 
-*Proposition.* Given $n$ independent Gaussian vectors $x_1, \dots, x_n \in \mathbb{R}^d$, and consider labels $y_i = \la a, x_i \ra$ for some vector $a$ with $||a||_0 = s$.  Then the minimizer of the $\ell_1$ regularized objective function will be the vector $a$, with high probability, provided that $n > c \cdot s \log d$, for some absolute constant $c$.
+This implies a useful rule of thumb.  To ensure generalization, make sure that the training set size $n$ is at least linear in the number $d$ of free parameters in the function that you're trying to learn.
+
+*Proposition.* Given $n$ independent Gaussian vectors $x_1, \dots, x_n \in \mathbb{R}^d$, and consider labels $y_i = \la a, x_i \ra$ for some vector $a$ with $||a||_0 = s$.  Then the minimizer of the $\ell_1$ regularized objective function will be the vector $a$, with high probability, provided that $n > c \cdot s \log d$, for some absolute constant $c$<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+E. Candes, M. Wakin. An introduction to compressive sampling. *IEEE Signal Processing Magazine.* 25.2 (2008): 21-30.
+</span>.
+
+Intuitively, this means that the $\ell_1$ norm is a computationally tractable proxy for the $\ell_0$ norm.
 
 ## Linear-algebraic techniques
 
@@ -201,7 +208,9 @@ Then this rank $k$ decomposition is unique (up to scalar multiplication of the v
 
 ## Spectral graph theory
 
-Given a graph $G = (V, E)$ with $|V| = n$ vertices, we can define the Laplacian matrix as an $n \times n$ matrix $L_G =D - A$, where $D$ is the degree matrix and $A$ is the adjacency matrix.  The eigenvalues of $L_G$ inform the structure of the graph.  We can show the following important result:
+Given a graph $G = (V, E)$ with $|V| = n$ vertices, we can define the Laplacian matrix as an $n \times n$ matrix $L_G =D - A$, where $D$ is the degree matrix and $A$ is the adjacency matrix.  The eigenvalues of $L_G$ inform the structure of the graph.  We can show the following important result:<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+For more on machine learning on graphs, see Masthew Das Sarma's [article in *The Gradient*](https://thegradient.pub/structure-learning/).
+</span>
 
 **Theorem.** The number of zero eigenvalues of the Laplacian $L_G$ equals the number of connected components of the graph $G$.
 
@@ -221,7 +230,7 @@ $$
 \theta_G \geq \lambda_2 \left ( 1 - \frac{|S|}{|V|} \right ).
 $$
 
-For more on machine learning on graphs, see Matthew Das Sarma's [article in *The Gradient*](https://thegradient.pub/structure-learning/).
+
 
 ## Sampling and estimation
 
