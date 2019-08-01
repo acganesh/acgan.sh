@@ -45,7 +45,13 @@ Importantly, assuming that our hash function is well-behaved, the expected load 
 
 To implement the `Lookup` and `Insert` operations for this setup, we use a balanced binary search tree (e.g. a red-black tree), since the `Successor` operation is fast.  Finding the cache responsible for storing a given object $x$ will then take $O(\log n)$ time.
 
-This implementation was first described in Karger et al. 1997, STOC.  While consistent hashing is widely in use today, this paper was initially rejected because a reviewer felt that there were no practical applications for this technique.
+This implementation was first described in Karger et al. 1997.  While consistent hashing is widely in use today, this paper was initially rejected because a reviewer felt that there were no practical applications for this technique. <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+D. Karger, E. Lehman, T. Leighton, M. Levine, D. Lewin, and R. Panigrahy. Consistent
+hashing and random trees: Distributed caching protocols for relieving hot spots on the
+world wide web. In *Proceedings of the Twenty-ninth Annual ACM Symposium on Theory
+of Computing (STOC)*, pages 654–663, 1997.
+</span>.
+
 
 ## Data and distance
 
@@ -107,6 +113,12 @@ $$
   (a_i^T (\mbf{x} - \mbf{y}))^2 = \left( \sum_{j=1}^{k} a_{ij} (x_j - y_j) \right)^2 
 $$
 is an unbiased estimator of $||\mbf{x} - \mbf{y}||_2^2$.
+
+Interestingly, the Johnson-Lindenstrauss lemma was well-known to mathematicians <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Johnson, William B.; Lindenstrauss, Joram (1984). "Extensions of Lipschitz mappings into a Hilbert space". In Beals, Richard; Beck, Anatole; Bellow, Alexandra; et al. (eds.). *Conference in modern analysis and probability (New Haven, Conn., 1982)*. Contemporary Mathematics. 26. Providence, RI: American Mathematical Society. pp. 189–206.
+</span>and was only much later applied to problems in statistical learning, in e.g. <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Ailon, Nir; Chazelle, Bernard (2006). "Approximate nearest neighbors and the fast Johnson–Lindenstrauss transform". *Proceedings of the 38th Annual ACM Symposium on Theory of Computing.* New York: ACM Press. pp. 557–563. 
+</span>
 
 ## Generalization and regularization
 
@@ -205,7 +217,6 @@ $$
 
 Then this rank $k$ decomposition is unique (up to scalar multiplication of the vectors), and these factors can be efficiently recovered, using Jenrich's algorithm.
 
-
 ## Spectral graph theory
 
 Given a graph $G = (V, E)$ with $|V| = n$ vertices, we can define the Laplacian matrix as an $n \times n$ matrix $L_G =D - A$, where $D$ is the degree matrix and $A$ is the adjacency matrix.  The eigenvalues of $L_G$ inform the structure of the graph.  We can show the following important result:<label class="margin-toggle sidenote-number"></label><span class="sidenote">
@@ -234,7 +245,11 @@ $$
 
 ## Sampling and estimation
 
-We discuss *reservoir sampling,* originally due to Vitter in 1985.  Given a number $k$, and a datastream $x_1, x_2, \dots, $ of length greater than $k$:
+We discuss *reservoir sampling,* originally due to Vitter in 1985.  <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Vitter, Jeffrey S. "Random sampling with a reservoir." *ACM Transactions on Mathematical Software (TOMS)* 11.1 (1985): 37-57.
+</span>
+
+Given a number $k$, and a datastream $x_1, x_2, \dots, $ of length greater than $k$:
 
 - Put the first $k$ elements of the stream into a "reservoir" $R = (x_1, \dots, x_k)$.
 - For $i \geq k+1$:
@@ -264,6 +279,12 @@ In fact, convolutions used in deep learning today use FFT-based implementations,
 ## Sparse vector / matrix recovery
 
 Often, we can reconstruct sparse signals with a few linear measurements.
+<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+E. J. Candes, J. Romberg, and T. Tao. Robust uncertainty principles: exact signal
+reconstruction from highly incomplete frequency information. *IEEE Transactions on
+Information Theory*, 52(2):489–509, 2006.
+</span>
+
 
 **Theorem.** Fix a signal length $n$ and a sparsity level $k$.  Let $\mbf{A}$ be an $m \times n$ matrix with $m = \Theta (k \log \frac{n}{k} )$ rows, with each of its $mn$ entries chosen independently from the standard Gaussian distribution.  With high probability over the choice of $\mbf{A}$, every $k$-sparse signal $\mbf{z}$ can be efficiently recovered from $\mbf{b} = \mbf{Az}$.
 
@@ -271,7 +292,10 @@ Intuitively, this means that given noisy readings of a true signal, we can often
 
 ## Privacy-preserving computation
 
-It's possible to define randomized algorithms that are privacy preserving.  The key concept is that of *differential privacy*.  Intuitively, an algorithm is differentially private if an observer seeing its output cannot tell whether a particular individual's information was used in the computation.
+It's possible to define randomized algorithms that are privacy preserving.  The key concept is that of *differential privacy*.  Intuitively, an algorithm is differentially private if an observer seeing its output cannot tell whether a particular individual's information was used in the computation.<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Dwork, Cynthia, et al. "Calibrating noise to sensitivity in private data analysis." *Theory of cryptography conference.* Springer, Berlin, Heidelberg, 2006.
+</span>
+
 
 Let $\mathcal{A}: \mathcal{D}^n \to \mathcal{Y}$ be a randomized algorithm.  Let $D_1, D_2 \in \mathcal{D}^n$ be two databases that differ in at most one entry (these are called neighboring databases).
 
