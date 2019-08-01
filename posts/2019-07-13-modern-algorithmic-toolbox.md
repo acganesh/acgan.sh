@@ -45,7 +45,7 @@ Importantly, assuming that our hash function is well-behaved, the expected load 
 
 To implement the `Lookup` and `Insert` operations for this setup, we use a balanced binary search tree (e.g. a red-black tree), since the `Successor` operation is fast.  Finding the cache responsible for storing a given object $x$ will then take $O(\log n)$ time.
 
-This implementation was first described in Karger et al. 1997.  While consistent hashing is widely in use today, this paper was initially rejected because a reviewer felt that there were no practical applications for this technique. <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+This implementation was first described in Karger et al. 1997.  While consistent hashing is widely in use today, this paper was initially rejected because a reviewer felt that there were no practical applications for this technique<label class="margin-toggle sidenote-number"></label><span class="sidenote">
 D. Karger, E. Lehman, T. Leighton, M. Levine, D. Lewin, and R. Panigrahy. Consistent
 hashing and random trees: Distributed caching protocols for relieving hot spots on the
 world wide web. In *Proceedings of the Twenty-ninth Annual ACM Symposium on Theory
@@ -114,11 +114,11 @@ $$
 $$
 is an unbiased estimator of $||\mbf{x} - \mbf{y}||_2^2$.
 
-Interestingly, the Johnson-Lindenstrauss lemma was well-known to mathematicians <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Interestingly, the Johnson-Lindenstrauss lemma was well-known to mathematicians<label class="margin-toggle sidenote-number"></label><span class="sidenote">
 Johnson, William B.; Lindenstrauss, Joram (1984). "Extensions of Lipschitz mappings into a Hilbert space". In Beals, Richard; Beck, Anatole; Bellow, Alexandra; et al. (eds.). *Conference in modern analysis and probability (New Haven, Conn., 1982)*. Contemporary Mathematics. 26. Providence, RI: American Mathematical Society. pp. 189–206.
-</span>and was only much later applied to problems in statistical learning, in e.g. <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+</span>and was only much later applied to problems in statistical learning<label class="margin-toggle sidenote-number"></label><span class="sidenote">
 Ailon, Nir; Chazelle, Bernard (2006). "Approximate nearest neighbors and the fast Johnson–Lindenstrauss transform". *Proceedings of the 38th Annual ACM Symposium on Theory of Computing.* New York: ACM Press. pp. 557–563. 
-</span>
+</span>.
 
 ## Generalization and regularization
 
@@ -138,9 +138,9 @@ where $c$ is a sufficiently large constant.  Then with probability at least $1 -
 
 This implies a useful rule of thumb.  To ensure generalization, make sure that the training set size $n$ is at least linear in the number $d$ of free parameters in the function that you're trying to learn.
 
-*Proposition.* Given $n$ independent Gaussian vectors $x_1, \dots, x_n \in \mathbb{R}^d$, and consider labels $y_i = \la a, x_i \ra$ for some vector $a$ with $||a||_0 = s$.  Then the minimizer of the $\ell_1$ regularized objective function will be the vector $a$, with high probability, provided that $n > c \cdot s \log d$, for some absolute constant $c$<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+*Proposition.* Given $n$ independent Gaussian vectors $x_1, \dots, x_n \in \mathbb{R}^d$, and consider labels $y_i = \la a, x_i \ra$ for some vector $a$ with $||a||_0 = s$.  Then the minimizer of the $\ell_1$ regularized objective function will be the vector $a$, with high probability, provided that $n > c \cdot s \log d$, for some absolute constant $c$.<label class="margin-toggle sidenote-number"></label><span class="sidenote">
 E. Candes, M. Wakin. An introduction to compressive sampling. *IEEE Signal Processing Magazine.* 25.2 (2008): 21-30.
-</span>.
+</span>
 
 Intuitively, this means that the $\ell_1$ norm is a computationally tractable proxy for the $\ell_0$ norm.
 
@@ -245,7 +245,7 @@ $$
 
 ## Sampling and estimation
 
-We discuss *reservoir sampling,* originally due to Vitter in 1985.  <label class="margin-toggle sidenote-number"></label><span class="sidenote">
+We discuss *reservoir sampling,* originally due to Vitter in 1985.<label class="margin-toggle sidenote-number"></label><span class="sidenote">
 Vitter, Jeffrey S. "Random sampling with a reservoir." *ACM Transactions on Mathematical Software (TOMS)* 11.1 (1985): 37-57.
 </span>
 
@@ -278,8 +278,7 @@ In fact, convolutions used in deep learning today use FFT-based implementations,
 
 ## Sparse vector / matrix recovery
 
-Often, we can reconstruct sparse signals with a few linear measurements.
-<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Often, we can reconstruct sparse signals with a few linear measurements.<label class="margin-toggle sidenote-number"></label><span class="sidenote">
 E. J. Candes, J. Romberg, and T. Tao. Robust uncertainty principles: exact signal
 reconstruction from highly incomplete frequency information. *IEEE Transactions on
 Information Theory*, 52(2):489–509, 2006.
