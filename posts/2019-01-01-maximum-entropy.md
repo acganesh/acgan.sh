@@ -20,8 +20,10 @@ $$
 
 Intuitively, the notion of entropy defines a measure of "disorder" or
 "expected surprise" given a probability distribution. As described by
-Shannon in [@shannon1948mathematical], the entropy can be defined as
-follows.\
+Shannon in is 1948 article, the entropy can be defined as
+follows<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Shannon, Claude Elwood. "A mathematical theory of communication." *Bell system technical journal* 27.3 (1948): 379-423.
+</span>.
 
 Let $X$ be a discrete random variable on a space $\mathcal{X}$ with
 probability mass function $\mathbf{p}(x)$. We define the discrete
@@ -40,8 +42,7 @@ Part (a) follows from the fact that
 $\log \frac{1}{\mathbf{p}(x)} \geq 0$ for any $x \in \mathcal{X}$. Hence
 the expectation is nonnegative and $H(X) \geq 0$.
 
-To show part (b), we will apply Jensen's inequality (see the appendix
-for a formal statement). First, note that $f(t) = \log (t)$ is concave.
+To show part (b), we will apply Jensen's inequality. First, note that $f(t) = \log (t)$ is concave.
 Applying Jensen's inequality, we obtain: $$\begin{aligned}
     \mathbb{E}\left[ \log \frac{1}{\mathbf{p}(x)} \right] & \leq \log \mathbb{E}\left[ \frac{1}{\mathbf{p}(x)} \right] \\
     &= \log \sum_{x \in \mathcal{X}} \mathbf{p}(x) \cdot \frac{1}{\mathbf{p}(x)} \\
@@ -55,10 +56,14 @@ $D(\mathbf{p}|| \mathbf{q}) \neq D(\mathbf{q}|| \mathbf{p})$ in general,
 so the relative entropy is not a metric.
 
 Let $\mathbf{p}$ and $\mathbf{q}$ be probability distributions on a
-space $\mathcal{X}$. Then the relative entropy[^1]
+space $\mathcal{X}$. Then the relative entropy
 $D(\mathbf{p}|| \mathbf{q})$ is defined as $$\begin{aligned}
     D(\mathbf{p}|| \mathbf{q}) = \mathbb{E}_{x \sim \mathbf{p}(x)} \left[ \log \frac{\mathbf{p}(x)}{\mathbf{q}(x)} \right] = \sum_{x \in \mathcal{X}} \mathbf{p}(x) \log \frac{\mathbf{p}(x)}{\mathbf{q}(x)}.
   \end{aligned}$$
+<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+This quantity is also known as the Kullback-Leibler divergence and has numerous applications in statistics and physics.
+</span>.
+
 
 We will use the following basic fact in subsequent proofs:\
 
@@ -119,8 +124,13 @@ the fewest assumptions.
 There is significant debate on whether the principle of maximum entropy
 is the best choice for prior selection in statistics. We do not concern
 ourselves here with these difficult issues, but we refer the interested
-reader to
-[@cover2012elements][@jaynes1982rationale][@mackay2003information].
+reader to<label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Cover, Thomas M., and Joy A. Thomas. *Elements of information theory.* John Wiley & Sons, 2012.
+</span><label class="margin-toggle sidenote-number"></label><span class="sidenote">
+Jaynes, Edwin T. "On the rationale of maximum-entropy methods." Proceedings of the IEEE 70.9 (1982): 939-952.
+</span><label class="margin-toggle sidenote-number"></label><span class="sidenote">
+MacKay, David JC, and David JC Mac Kay. *Information theory, inference and learning algorithms.* Cambridge university press, 2003.
+</span>.
 
 ## Examples of maximum entropy
 
@@ -288,7 +298,9 @@ $n_i^{*} = n p_i^{*}$ dice showing face $i$.
 ## The Wallis experiment
 
 This experiment is due to Graham Wallis who mentioned it to E.T. Jaynes
-in 1962 [@jaynes2003probability].
+in 1962</label><span class="sidenote">
+Jaynes, Edwin T. *Probability theory: The logic of science.* Cambridge university press, 2003.
+</span>.
 
 Suppose Alice is a researcher trying to understand some data. She is
 studying a phenomenon and wants to estimate a prior probability
@@ -334,14 +346,3 @@ $N \to \infty$? Applying Stirling's approximation: $$\begin{aligned}
 
 In conclusion, Alice's experiment will most likely converge to the
 maximum entropy distribution as $N \to \infty$.
-
-## Appendix {#appendix .unnumbered}
-
-Let $X$ be a random variable, and let $\varphi$ be a convex function.
-Then $$\begin{aligned}
-    \varphi(\mathbb{E}[X]) \leq \mathbb{E}\left[ \varphi(X) \right].
-  \end{aligned}$$ If $\varphi$ is strictly convex, equality holds iff
-$X$ is uniformly distributed.
-
-[^1]: This quantity is also known as the Kullback-Leibler (KL)
-    divergence and has numerous applications in statistics and physics.
