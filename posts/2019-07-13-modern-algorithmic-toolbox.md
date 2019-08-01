@@ -315,13 +315,3 @@ $$
 $$
 
 The key point is that if $\mathcal{A}$ is $\epsilon$-differentially private, then Bob won't be able to win much better than random guessing.
-
-## References
-
-- STOC paper
-- W. B. Johnson and J. Lindenstrauss.
-- Vitter
-- FT book
-- Gradient article
-- Compressed sensing (Tao, Candes)
-- Differential privacy: https://people.eecs.berkeley.edu/~stephentu/writeups/6885-lec20-b.pdf
