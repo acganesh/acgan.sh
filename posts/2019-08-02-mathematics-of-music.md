@@ -32,6 +32,13 @@ $$
 
 The energy density at a particular value of $s$ is defined to be the square of the amplitude $|F(s)|$.
 
+We can express a periodic function $f(x)$ with period $2L$ as
+$$
+  f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos \left( \frac{n \pi x}{L} \right) + b_n \sin \left( \frac{n \pi x}{L} \right).
+$$
+We can compute the coefficients as ...
+
+
 ## Systems of tuning
 
 *Pythagorean tuning.* In this setting, the interval between a perfect fifth is $3:2$.
