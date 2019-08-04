@@ -16,8 +16,12 @@ $$
 \hat{P}(\rho) = \sum_{s} P(s) \rho(s).
 $$
 
-- Convolutions on groups (see colah's post)
+*Definition.* Let $f, g : G \to \mathbb{C}$.  Then the convolution of these functions is defined as
+$$
+(f * g)(a) = \sum_{b \in G} f(ab^{-1}) g(b).
+$$
 
+- Convolutions on groups (see colah's post)
 
 - Fourier inversion theorem
 - random walk on a lattice has connections to riffle shuffle
