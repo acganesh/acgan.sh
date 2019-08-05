@@ -37,6 +37,15 @@ $$
   f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos \left( \frac{n \pi x}{L} \right) + b_n \sin \left( \frac{n \pi x}{L} \right).
 $$
 We can compute the coefficients as ...
+$$
+  \frac{a_0}{2} = \frac{\langle f, 1\rangle}{\langle 1, 1\rangle}; \qquad a_0 = \frac{1}{L} \int_{-L}^{L} f(x) \, dx,
+$$
+$$
+  a_n = \frac{\langle f, \cos \left( \frac{n \pi x}{L} \right)\rangle}{\langle \cos \left( \frac{n \pi x}{L} \right), cos \frac{n \pi x}{L}\rangle} = \frac{1}{L} \int_{-L}^{L} f(x) \cos \left( \frac{n \pi x}{L} \right).
+$$
+$$
+  b_n = \frac{\langle f, \sin \left( \frac{n \pi x}{L} \right)\rangle}{\langle \sin \left( \frac{n \pi x}{L} \right), \sin \left( \frac{n \pi x}{L} \right)\rangle} = \frac{1}{L} \int_{-L}^{L} f(x) \sin \left( \frac{n \pi x}{L} \right).
+$$
 
 
 ## Systems of tuning
@@ -53,6 +62,4 @@ Nyquist's theorem states that the maximum frequency that can be represented when
 ## Burnside's lemma for enumeration of $T_n$
 
 See pp. 330 of Benson.
-
-
 
