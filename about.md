@@ -2,7 +2,7 @@
 title: About
 ---
 
-<p><span class="marginnote"><img src="images/Adi_DC_crop.jpg" alt="Adithya C. Ganesh"width="200px"></span></p>
+<p><span class="marginnote"><img src="images/adithya_photo.jpg" alt="Adithya C. Ganesh"width="200px"></span></p>
 
 <h1>About</h1>
 
