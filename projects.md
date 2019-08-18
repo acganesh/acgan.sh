@@ -6,7 +6,7 @@ title: Projects
 
 ## Teaching
 
-[Stanford CS43](https://stanford-lambda.gitlab.io/): Functional Programming Abstractions.  A class I teach at Stanford with Isaac Scheinfeld and previously Allan Jiang.  Winter 2017, Winter 2018, Winter 2019.
+[Stanford CS43](https://stanford-lambda.gitlab.io/): Functional Programming Abstractions.  A class I teach at Stanford with Isaac Scheinfeld and previously Allan Jiang.  Winter 2017, Winter 2018, Winter 2019, Winter 2020 quarters.
 
 ## Writing
 
@@ -16,13 +16,11 @@ Editor, [The Gradient](https://thegradient.pub/).  A digital publication focused
 
 "Variant Calling with Machine Learning" (2018).  Filed as provisional patent. Adithya Ganesh, Kyle Beauchamp et al., with Counsyl, Inc.
 
-
 ## Publications
 
 "Deep recurrent neural networks for accurate variant calling in 21-hydroxylase-deficient congenital adrenal hyperplasia" (poster, 2018).   With Kyle Beauchamp, et al.  ASHG 2018.
 
-"Generating Transferable Adversarial Examples via Smooth Max Ensembling" (poster, 2017).  With Yuchen Zhang, et al. NIPS 2017 Competition Workshop.  Third Place Winner.
-
+"Generating Transferable Adversarial Examples via Smooth Max Ensembling" (poster, 2017).  With Yuchen Zhang, et al. NIPS 2017 Competition Workshop (Third Place Winner).
 
 ## Open source
 
@@ -38,7 +36,7 @@ Here is my [Github](https://github.com/acganesh) profile.
 
 ## Books
 
-I have been involved with math Olympiads, and have written two problem books to guide student preparation.
+Previously, I was involved with mathematical Olympiads.  I have published two problem-books with Prof. Titu Andreescu to guide student preparation.
 
 [108 Algebra Problems](https://bookstore.ams.org/xyz-5/), with Dr. Titu Andreescu, published with XYZ Press.
 
