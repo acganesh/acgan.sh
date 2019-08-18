@@ -28,7 +28,7 @@ Editor, [The Gradient](https://thegradient.pub/).  A digital publication focused
 
 Here is my [Github](https://github.com/acganesh) profile.
 
-[`stanford-compendium`](https://gitlab.com/acganesh/stanford-compendium): A compilation of notes in mathematics and computer science from my time at Stanford.
+[`stanford-compendium`](https://gitlab.com/acganesh/stanford-compendium): A compilation of notes in mathematics and computer science from my time at Stanford.  Documents realtime LaTeX workflow to produce content quickly.
 
 [`torcs-autopilot`](https://github.com/acganesh/torcs-autopilot): Deep reinforcement learning for simulated autonomous driving.  Stanford CS229 final project.
 
