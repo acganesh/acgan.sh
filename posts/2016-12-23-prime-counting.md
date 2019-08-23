@@ -12,7 +12,7 @@ $$
 \lim_{x \to \infty} \left. \pi(x) \middle/ \frac{x}{\ln x} \right. = 1.
 $$
 
-The theorem was independently conjectured by Legendre and Gauss, and proved by Hadamard and de la Vallée Pussin around 100 years later in 1896.  The theorem can also be written as follows, which provides a refined numerical approximation:
+The theorem was independently conjectured by Legendre and Gauss, and proved by Hadamard and de la Vallée Poussin's around 100 years later in 1896.  The theorem can also be written as follows, which provides a refined numerical approximation:
 
 $$
 \pi(x) \approx \text{Li}(x) = \int_{2}^{x} \frac{dy}{\ln y},
