@@ -263,4 +263,4 @@ Kim Walisch's excellent [`primecount`](https://github.com/kimwalisch/primecount)
 
 ### Acknowledgments
 
-Thank you to Yuval Widgerson for providing detailed feedback on this draft.
+Thank you to Yuval Widgerson for providing feedback on this draft.
