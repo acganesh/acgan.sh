@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Efficient Prime Counting with the Meissel-Lehmer Algorithm 
-date: 2016-12-23
+date: 2019-08-25
 ---
 
 # Efficient prime counting with the Meissel-Lehmer algorithm
@@ -260,3 +260,7 @@ While the Meissel-Lehmer algorithm is quite fast for most practical purposes, th
 In 1996, Deléglise and Rivat<label class="margin-toggle sidenote-number"></label><span class="sidenote">Deleglise, M., and J. Rivat. ["Computing $\pi(x)$: The Meissel, Lehmer, Lagarias, Miller, Odlyzko Method."](http://www.ams.org/journals/mcom/1996-65-213/S0025-5718-96-00674-6/S0025-5718-96-00674-6.pdf) *Mathematics of Computation.* 65.213 (1996): 235-46. Web.<br>Silva, T. ["Computing $\pi(x)$: the combinatorial method."](http://sweet.ua.pt/tos/bib/5.4.pdf) *Revista do Detua.* 4.6 (2006): 759.</span> refined the Lagarias-Miller-Odlyzko method allowing one to save a factor of $\log x$ in the time complexity, at the cost of an increase by a factor of $\log x \log \log x$ in space.  In 2001, Gourdon<label class="margin-toggle sidenote-number"></label><span class="sidenote">X. Gourdon, "Computation of $\pi(x)$: Improvements to the Meissel, Lehmer, Lagarias, Miller, Odlyzko, Deléglise and Rivat method."  Available from [numbers.computation.free.fr/Constants/Primes/Pix/piNalgorithm.ps](numbers.computation.free.fr/Constants/Primes/Pix/piNalgorithm.ps)</span> published refinements to the Deléglise-Rivat method that saves constant factors in time and space complexity.
 
 Kim Walisch's excellent [`primecount`](https://github.com/kimwalisch/primecount) software package provides highly optimized C++ implementations of many of these algorithms, with support for OpenMP parallelization.  In September of 2015, this software was used to produce a [record-breaking computation of $\pi(10^{27})$](http://www.mersenneforum.org/showthread.php?t=20473), using 16-core EC2 r3.8xlarge instances and a 36-core Xeon server.  Using the Deléglise-Rivat method, the computation took 23.03 CPU core years, and the peak memory usage was 235 gigabytes!
+
+### Acknowledgments
+
+Thank you to Yuval Widgerson for providing detailed feedback on this draft.
