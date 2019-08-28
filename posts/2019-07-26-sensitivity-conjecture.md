@@ -36,3 +36,4 @@ Key questions:
 - Why hasn't this proof been found before?  The ratio of difficulty of generative vs. discriminative models.
 - What related work is there?
 - What other theory does this imply?  esp. given that this is a stronger version of the sensitivity conjecture.
+- Add more on significance of this result.
