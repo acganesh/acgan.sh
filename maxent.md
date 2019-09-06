@@ -3,9 +3,7 @@ title: Maximum entropy
 ---
 
 
-My goal is to document my thoughts in mathematics, computer science, policy, and other 
-
-Welcome to my blog, which is an informal platform for ideas I'm thinking about.  My goal is to document my thoughts in mathematics, computer science, policy, and other curiosities.
+Here are my writings on topics spanning mathematics, computer science, and other curiosities.  I aim to write [long-form pieces](https://www.gwern.net/About#long-content) with the long-term in mind.
 
 
 ## Mathematics and statistics
