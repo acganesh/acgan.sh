@@ -1,8 +1,9 @@
 ---
-title: Blog - Maximum Entropy
+title: Maximum entropy
 ---
 
-# Blog - Maximum Entropy
+
+My goal is to document my thoughts in mathematics, computer science, policy, and other 
 
 Welcome to my blog, which is an informal platform for ideas I'm thinking about.  My goal is to document my thoughts in mathematics, computer science, policy, and other curiosities.
 
