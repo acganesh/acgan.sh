@@ -2,7 +2,7 @@
 title: Projects
 ---
 
-Note: this compilation is out of date.
+(Note: this compilation is incomplete.)
 
 # Projects
 
@@ -22,13 +22,9 @@ Editor, [The Gradient](https://thegradient.pub/).  A digital publication focused
 
 "Deep recurrent neural networks for accurate variant calling in 21-hydroxylase-deficient congenital adrenal hyperplasia" (poster, 2018).   With Kyle Beauchamp, et al.  ASHG 2018.
 
-"Generating Transferable Adversarial Examples via Smooth Max Ensembling" (poster, 2017).  With Yuchen Zhang, et al. NIPS 2017 Competition Workshop (Third Place Winner).
-
 ## Open source
 
 Here is my [Github](https://github.com/acganesh) profile.
-
-[`stanford-compendium`](https://gitlab.com/acganesh/stanford-compendium): A compilation of notes in mathematics and computer science from my time at Stanford.
 
 [`torcs-autopilot`](https://github.com/acganesh/torcs-autopilot): Deep reinforcement learning for simulated autonomous driving.  Stanford CS229 final project.
 
