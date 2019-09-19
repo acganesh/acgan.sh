@@ -3,7 +3,7 @@ title: Maximum entropy
 ---
 
 
-Here are my writings on topics spanning mathematics, computer science, and other curiosities.  I aim to write pieces with the [long-term](https://www.gwern.net/About#long-content) in mind.
+Here are my writings on topics spanning mathematics, computer science, and other curiosities.
 
 ## Statistics
 
