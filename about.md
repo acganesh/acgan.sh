@@ -6,7 +6,9 @@ title: About
 
 <h1>About</h1>
 
-<p>Hi, I'm Adi.  I study math at theoretical computer science at [Stanford](https://www.stanford.edu/).</p>
+<p>Hi, I'm Adithya<label class="margin-toggle sidenote-number"></label><span class="sidenote">My friends call me Adi.</span>.</p>
+
+<p>I study math at theoretical computer science at [Stanford](https://www.stanford.edu/).</p>
 
 <p>When deciding what to work on, I choose problems that seem important for the long-term future.  I am currently interested in programming languages, distributed computing, and probability theory.</p>
 

@@ -2,6 +2,7 @@
 title: Maximum entropy
 ---
 
+<h1>Essays: Maximum Entropy</h1>
 
 Here are my writings on topics spanning mathematics, computer science, and other curiosities.
 
