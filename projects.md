@@ -28,9 +28,13 @@ Here is my [Github](https://github.com/acganesh) profile.
 
 [`torcs-autopilot`](https://github.com/acganesh/torcs-autopilot): Deep reinforcement learning for simulated autonomous driving.  Stanford CS229 final project.
 
+[`project-euler`](https://github.com/acganesh/project-euler): Solved ~140 mathematical and algorithmic problems on Project Euler.
+
+[`entropy`](https://github.com/acganesh/entropy): Algorithmic information theory: notes and code.
+
 [`ChromaNet`](https://github.com/acganesh/ChromaNet): Deep learning for genomic chromatic profile prediction.  Stanford CS273B final project.
 
-[`project-euler`](https://github.com/acganesh/project-euler): Solved ~140 mathematical and algorithmic problems on Project Euler.
+[`meta-research`](https://github.com/gradientpub/meta-research): WIP (meta-research for AI, with The Gradient).
 
 ## Books
 
