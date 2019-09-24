@@ -2,7 +2,7 @@
 title: Projects
 ---
 
-(Note: this compilation is incomplete.)
+(Note: this compilation is incomplete and out of date.)
 
 # Projects
 
@@ -34,8 +34,4 @@ Here is my [Github](https://github.com/acganesh) profile.
 
 ## Books
 
-Previously, I was involved with mathematical Olympiads.  I have published two problem-books with Prof. Titu Andreescu to guide student preparation.
-
-[108 Algebra Problems](https://bookstore.ams.org/xyz-5/), with Dr. Titu Andreescu, published with XYZ Press.
-
-[109 Inequalities](https://bookstore.ams.org/xyz-16/), with Dr. Titu Andreescu, published with XYZ Press.
+In a past life, I was involved with math contests.  I have published two problem-books to guide student preparation: [108 Algebra Problems](https://bookstore.ams.org/xyz-5/), and [109 Inequalities](https://bookstore.ams.org/xyz-16/).
