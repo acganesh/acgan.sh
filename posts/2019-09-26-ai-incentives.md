@@ -7,6 +7,8 @@ nocite: '[@*]'
 title: Incentives for AI practitioners are broken
 ---
 
+(CSS in progress for margin notes).
+
 I came into Stanford University eager to study artificial intelligence, enthusiastic about building the future. After two years of career fairs, startup pitches, and fireside chats, I grew frustrated by blatant, excessive commercialism<label class="margin-toggle sidenote-number"></label><span class="sidenote">
 http://nymag.com/intelligencer/2019/09/how-to-network-through-stanford-university.html</span> on display across campus culture. While I did find a small, motivated cohort of students fascinated by solving fundamental problems in AI, they were often drowned out by the industry-oriented majority. Yes, corporations are remarkably prolific when it comes to [research](https://www.loc.gov/rr/scitech/trs/trsosrd.html) [published](https://www.loc.gov/rr/scitech/trs/trsosrd.html) in major conferences.  But, to truly benefit society, academic research must pursue ideas for the long-term future. I am skeptical that the incentive structure for AI research is currently aligned with this goal.
 
@@ -23,6 +25,10 @@ Second, we need to have better [meta-analysis](https://www.metascience2019.org/)
 Third, academia must keep pace. While we may hope that visionaries are drawn to unsolved problems for their own sake, too many of our brightest minds will be drawn to finding slightly [more efficient ways to sell ads](https://www.nytimes.com/2015/03/08/technology/on-the-case-at-mount-sinai-its-dr-data.html) as long as they can get paid [ten—or, in some cases, a hundred—times more](https://www.nytimes.com/2017/10/22/technology/artificial-intelligence-experts-salaries.html) for doing so.  Academia must “fight fire with fire” and provide an order of magnitude [more funding and tenure track positions](https://twitter.com/stanfordnlp/status/1170804607238303744) for AI research.  Stanford must leverage its endowment to improve [living standards for PhD students](https://www.stanforddaily.com/2019/02/28/every-day-was-about-survival-inside-the-graduate-student-affordability-crisis/), while pushing for increased federal spending in AI.
 
 In my view, developing [safe AI](https://futureoflife.org/ai-safety-research/) is the most important problem of our time. It is the difference between the [catastrophic failure of AI-propagated filter bubblessocial media ech in 2016](https://www.vox.com/technology/2018/12/21/18149099/delete-facebook-scandals-2018-cambridge-analytica) and applying [AI to medicine](https://www.nytimes.com/2019/03/11/well/live/how-artificial-intelligence-could-transform-medicine.html) to save lives. While the current state is unfortunate, a better future is possible. I am optimistic that with funding disclosure, meta-analysis tools, and radically improved support for graduate students,more basic research funding we can ensure that AI practitioners abide by a [Hippocratic Oath](https://www.wired.com/story/should-data-scientists-adhere-to-a-hippocratic-oath/).
+
+# Acknowledgments
+
+It's very difficult to list everyone here, but I am very grateful for my friends and colleagues at Stanford, The Gradient, The Thiel Foundation, 1517, and Neo, for helpful conversations and feedback on these ideas.  I would especially like to thank Michael Swerdlow (Stanford), Amit Ghorawat (Google), Jeff Hammerbacher (Hammer Lab), and Zhanpei Fang (Stanford) for their detailed feedback.
 
 
 -- 
