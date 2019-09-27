@@ -29,7 +29,7 @@ In my view, developing [safe AI](https://futureoflife.org/ai-safety-research/) i
 
 # Acknowledgments
 
-It's difficult to list everyone here, but I am grateful for my friends and colleagues at Stanford, The Gradient, and The Thiel Fellowship for helpful conversations around these ideas.  I would especially like to thank Michael Swerdlow, Amit Ghorawat, Jeff Hammerbacher, Zhanpei Fang, Ali Partovi, and Vinjai Vale for their detailed feedback.
+It's difficult to list everyone here, but I am grateful for my friends and colleagues at Stanford, The Gradient, and The Thiel Fellowship for helpful conversations around these ideas.  I would especially like to thank Michael Swerdlow, Amit Ghorawat, Jeff Hammerbacher, Zhanpei Fang, Ali Partovi, and Vinjai Vale.
 
 
 -- 
