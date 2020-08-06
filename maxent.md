@@ -19,7 +19,3 @@ Here are my writings on topics spanning mathematics, computer science, and other
 [Efficient prime counting with the Meissel-Lehmer algorithm](posts/2016-12-23-prime-counting.html)
 
 [The modern algorithmic toolbox](posts/2019-07-13-modern-algorithmic-toolbox.html)
-
-## Policy
-
-[Incentives for AI practitioners are broken](posts/2019-09-26-ai-incentives.html)
