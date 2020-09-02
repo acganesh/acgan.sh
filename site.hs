@@ -5,7 +5,7 @@ import qualified Data.Set    as S
 import           Hakyll
 import           Text.Pandoc.Options
 
-
+import GHC.IO.Encoding
 
 --------------------------------------------------------------------------------
 config :: Configuration
@@ -14,47 +14,50 @@ config = defaultConfiguration {
 }
 
 main :: IO ()
-main = hakyllWith config $ do
-    match "images/*" $ do
-        route   idRoute
-        compile copyFileCompiler
+main = do
+    -- adding "setLocaleEncoding" as per https://www.reddit.com/r/haskell/comments/43tmt8/commitbuffer_invalid_argument_invalid_character/
+    setLocaleEncoding utf8
+    hakyllWith config $ do
+      match "images/*" $ do
+          route   idRoute
+          compile copyFileCompiler
 
-    match "css/*" $ do
-        route   idRoute
-        compile compressCssCompiler
+      match "css/*" $ do
+          route   idRoute
+          compile compressCssCompiler
 
-    match "et-book/*/*" $ do
-        route   idRoute
-        compile copyFileCompiler
+      match "et-book/*/*" $ do
+          route   idRoute
+          compile copyFileCompiler
 
-    match (fromList ["about.md", "cv.md", "maxent.md"]) $ do
-        route   $ setExtension "html"
-        compile $ customPandocCompiler
-            >>= loadAndApplyTemplate "templates/default.html" defaultContext
-            >>= relativizeUrls
+      match (fromList ["about.md", "cv.md", "maxent.md"]) $ do
+          route   $ setExtension "html"
+          compile $ customPandocCompiler
+              >>= loadAndApplyTemplate "templates/default.html" defaultContext
+              >>= relativizeUrls
 
-    match "posts/*" $ do
-        route $ setExtension "html"
-        compile $ customPandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
-            >>= relativizeUrls
+      match "posts/*" $ do
+          route $ setExtension "html"
+          compile $ customPandocCompiler
+              >>= loadAndApplyTemplate "templates/post.html"    postCtx
+              >>= loadAndApplyTemplate "templates/default.html" postCtx
+              >>= relativizeUrls
 
-    match "index.html" $ do
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll "posts/*"
-            let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Home"                `mappend`
-                    defaultContext
+      match "index.html" $ do
+          route idRoute
+          compile $ do
+              posts <- recentFirst =<< loadAll "posts/*"
+              let indexCtx =
+                      listField "posts" postCtx (return posts) `mappend`
+                      constField "title" "Home"                `mappend`
+                      defaultContext
 
-            getResourceBody
-                >>= applyAsTemplate indexCtx
-                >>= loadAndApplyTemplate "templates/default.html" indexCtx
-                >>= relativizeUrls
+              getResourceBody
+                  >>= applyAsTemplate indexCtx
+                  >>= loadAndApplyTemplate "templates/default.html" indexCtx
+                  >>= relativizeUrls
 
-    match "templates/*" $ compile templateBodyCompiler
+      match "templates/*" $ compile templateBodyCompiler
 
 
 --------------------------------------------------------------------------------
